@@ -24,6 +24,18 @@ export default defineNuxtConfig({
     ]
   },
 
+  nitro: {
+    prerender: {
+      routes: [
+        '/servicios/mantenimiento',
+        '/servicios/reparacion',
+        '/servicios/importacion',
+        '/servicios/correctivo'
+      ],
+      autoSubfolderIndex: false
+    }
+  },
+
   app: {
     head: {
       htmlAttrs: { lang: 'es', class: 'scroll-smooth' },
