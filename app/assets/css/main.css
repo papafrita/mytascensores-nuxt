@@ -1,0 +1,81 @@
+/* ===== Global Styles for MYT Ascensores ===== */
+
+/* Hero gradient overlay */
+.hero-gradient-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(29, 50, 115, 0.96) 0%,
+    rgba(19, 33, 76, 0.85) 50%,
+    rgba(43, 199, 217, 0.4) 100%
+  );
+}
+
+/* Glass navigation bar */
+.glass-nav {
+  background: #f3f6fa;
+}
+
+.glass-nav-scrolled {
+  background: #f3f6fa;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* FAQ accordion animation */
+.faq-answer {
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item.is-open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-item.is-open .faq-icon {
+  transform: rotate(180deg);
+  color: #2bc7d9;
+}
+
+.faq-item.is-open {
+  border-color: #2bc7d9;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(29, 50, 115, 0.04);
+}
+
+/* Step line connector (mobile only) */
+.step-line::after {
+  content: '';
+  position: absolute;
+  background: repeating-linear-gradient(
+    to bottom,
+    #2bc7d9,
+    #2bc7d9 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  width: 2px;
+  top: 2.5rem;
+  bottom: -1rem;
+  left: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .step-line::after {
+    display: none;
+  }
+}
+
+/* Content fade-in animation */
+.fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
