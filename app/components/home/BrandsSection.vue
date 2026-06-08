@@ -23,7 +23,7 @@
           rel="noopener noreferrer"
           class="flex items-center justify-center p-6 bg-white rounded-xl border border-white/5 hover:border-cyan hover:shadow-premiumGlow hover:-translate-y-1 transition-all duration-300 h-28"
         >
-          <img :src="brand.logo" :alt="brand.name" class="max-h-full max-w-full object-contain transition-all duration-300 hover:scale-105" />
+          <img :src="brand.logo" :alt="brand.name" :width="brand.width" :height="brand.height" loading="lazy" decoding="async" class="max-h-full max-w-full object-contain transition-all duration-300 hover:scale-105" />
         </a>
       </div>
     </div>
@@ -32,10 +32,10 @@
 
 <script setup lang="ts">
 const brands = [
-  { name: 'Schindler', logo: '/images/brands/schindler.png', href: 'https://www.schindler.cl/' },
-  { name: 'Otis', logo: '/images/brands/otis.png', href: 'https://www.otis.com/es/cl/' },
-  { name: 'thyssenkrupp', logo: '/images/brands/thyssenkrupp.png', href: 'https://www.tkelevator.com/cl-es/' },
-  { name: 'KONE', logo: '/images/brands/kone.png', href: 'https://www.kone.cl/' },
-  { name: 'Mitsubishi Electric', logo: '/images/brands/mitsubishi.png', href: 'https://www.mitsubishielectric.cl/' }
+  { name: 'Schindler', logo: '/images/brands/schindler.png', width: 178, height: 70, href: 'https://www.schindler.cl/' },
+  { name: 'Otis', logo: '/images/brands/otis.webp', width: 1920, height: 629, href: 'https://www.otis.com/es/cl/' },
+  { name: 'thyssenkrupp', logo: '/images/brands/thyssenkrupp.png', width: 182, height: 70, href: 'https://www.tkelevator.com/cl-es/' },
+  { name: 'KONE', logo: '/images/brands/kone.png', width: 137, height: 70, href: 'https://www.kone.cl/' },
+  { name: 'Mitsubishi Electric', logo: '/images/brands/mitsubishi.png', width: 199, height: 70, href: 'https://www.mitsubishielectric.cl/' }
 ]
 </script>

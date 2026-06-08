@@ -7,7 +7,7 @@
       <div class="flex flex-col gap-10 md:flex-row md:items-center md:justify-between border-b border-white/10 pb-8">
         <div>
           <NuxtLink to="/" class="inline-block">
-            <img src="/images/logo-blanco.png" alt="MYT Ascensores" class="h-24 w-auto md:h-28 object-contain" />
+            <img src="/images/logo-blanco.png" alt="MYT Ascensores" width="248" height="157" loading="lazy" decoding="async" class="h-24 w-auto md:h-28 object-contain" />
           </NuxtLink>
           <p class="mt-6 max-w-xl text-slate-400 leading-relaxed font-light text-sm">
             Empresa especializada en mantención, reparación e instalación de ascensores en Chile. Servicio técnico certificado MINVU.
