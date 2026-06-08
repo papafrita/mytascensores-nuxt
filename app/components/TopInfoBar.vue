@@ -18,14 +18,14 @@
         </span>
       </div>
       <div class="flex items-center gap-4">
-        <div class="flex items-center gap-3">
-          <a href="/" class="text-white/60 hover:text-secondary transition-colors p-1 flex items-center justify-center h-7 w-7" aria-label="Facebook">
+        <div class="flex items-center gap-2">
+          <a href="https://facebook.com/mytascensores" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-secondary transition-colors p-1.5 flex items-center justify-center h-9 w-9 text-lg md:text-xl" aria-label="Facebook">
             <font-awesome-icon :icon="['fab', 'facebook']" />
           </a>
-          <a href="https://www.instagram.com/mytascensores/" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-secondary transition-colors p-1 flex items-center justify-center h-7 w-7" aria-label="Instagram">
+          <a href="https://www.instagram.com/mytascensores/" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-secondary transition-colors p-1.5 flex items-center justify-center h-9 w-9 text-lg md:text-xl" aria-label="Instagram">
             <font-awesome-icon :icon="['fab', 'instagram']" />
           </a>
-          <a href="https://www.youtube.com/@mytascensores-zl2pt" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-secondary transition-colors p-1 flex items-center justify-center h-7 w-7" aria-label="YouTube">
+          <a href="https://www.youtube.com/@mytascensores-zl2pt" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-secondary transition-colors p-1.5 flex items-center justify-center h-9 w-9 text-lg md:text-xl" aria-label="YouTube">
             <font-awesome-icon :icon="['fab', 'youtube']" />
           </a>
         </div>

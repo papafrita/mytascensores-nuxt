@@ -1,11 +1,15 @@
 <template>
-  <section class="bg-surface py-12 md:py-16">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+  <section class="bg-primary py-12 md:py-16 text-white relative overflow-hidden">
+    <!-- Subtle Glow Backgrounds -->
+    <div class="absolute -top-24 right-0 w-96 h-96 bg-purple/10 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute -bottom-24 left-0 w-96 h-96 bg-cyan/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
       <div class="text-center max-w-3xl mx-auto mb-10">
-        <h2 class="text-3xl font-extrabold font-display text-navy md:text-4xl">
+        <h2 class="text-3xl font-extrabold font-display text-white md:text-4xl">
           <span class="text-cyan">Equipos</span> con que trabajamos
         </h2>
-        <p class="mt-4 text-base text-slate-600">
+        <p class="mt-4 text-base text-white/80">
           Tecnología de vanguardia y componentes de los principales fabricantes del mundo.
         </p>
       </div>
@@ -17,7 +21,7 @@
           :href="brand.href" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="flex items-center justify-center p-6 bg-white rounded-xl border border-slate-100 hover:border-cyan/30 hover:shadow-premium hover:-translate-y-1 transition-all duration-300 h-28"
+          class="flex items-center justify-center p-6 bg-white rounded-xl border border-white/5 hover:border-cyan hover:shadow-premiumGlow hover:-translate-y-1 transition-all duration-300 h-28"
         >
           <img :src="brand.logo" :alt="brand.name" class="max-h-full max-w-full object-contain transition-all duration-300 hover:scale-105" />
         </a>

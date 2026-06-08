@@ -1,6 +1,6 @@
 <template>
   <header id="mainHeader" :class="['sticky top-0 z-40 transition-all duration-300', isScrolled ? 'glass-nav-scrolled bg-[#f3f6fa] shadow-md' : 'glass-nav bg-[#f3f6fa]/90 backdrop-blur-md']">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 lg:px-8">
+    <nav aria-label="Navegación principal" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 lg:px-8">
       <NuxtLink to="/" class="flex items-center gap-3 group">
         <img src="/images/logo-myt.png" alt="MYT Ascensores" :class="['object-contain transition-all duration-300', isScrolled ? 'h-14 md:h-20 lg:h-24' : 'h-20 md:h-28 lg:h-32']" />
       </NuxtLink>

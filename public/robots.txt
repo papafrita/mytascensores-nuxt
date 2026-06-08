@@ -1,2 +1,39 @@
-User-Agent: *
-Disallow:
+# robots.txt - MYT Ascensores
+# https://mytascensores.cl
+
+# Permitir todos los rastreadores
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_nuxt/
+
+# Permitir bots de IA explícitamente
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap
+Sitemap: https://mytascensores.cl/sitemap.xml

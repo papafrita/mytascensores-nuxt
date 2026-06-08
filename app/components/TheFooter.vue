@@ -13,7 +13,7 @@
             Empresa especializada en mantención, reparación e instalación de ascensores en Chile. Servicio técnico certificado MINVU.
           </p>
         </div>
-        <nav class="flex flex-wrap gap-9 text-slate-400 font-semibold text-sm">
+        <nav aria-label="Enlaces del sitio" class="flex flex-wrap gap-9 text-slate-400 font-semibold text-sm">
           <NuxtLink class="hover:text-secondary transition-colors" to="/">Inicio</NuxtLink>
           <NuxtLink class="hover:text-secondary transition-colors" to="/nosotros">Nosotros</NuxtLink>
           <NuxtLink class="hover:text-secondary transition-colors" to="/#servicios">Servicios</NuxtLink>
@@ -26,7 +26,7 @@
       <div class="mt-8 flex flex-col gap-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
         <p>© 2026 MYT Ascensores. Todos los derechos reservados.</p>
         <div class="flex gap-4">
-          <a href="/" class="text-slate-500 hover:text-secondary transition-colors p-1 flex items-center justify-center h-7 w-7" aria-label="Facebook">
+          <a href="https://facebook.com/mytascensores" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-secondary transition-colors p-1 flex items-center justify-center h-7 w-7" aria-label="Facebook">
             <font-awesome-icon :icon="['fab', 'facebook']" class="text-lg" />
           </a>
           <a href="https://www.instagram.com/mytascensores/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-secondary transition-colors p-1 flex items-center justify-center h-7 w-7" aria-label="Instagram">

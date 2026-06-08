@@ -10,6 +10,8 @@
       <div 
         v-for="(slide, index) in computedSlides" 
         :key="index"
+        role="img"
+        :aria-label="slide.title"
         class="absolute inset-0 transition-opacity duration-1000 ease-in-out bg-cover bg-center"
         :class="[
           index === activeSlideIndex ? 'opacity-100 z-0' : 'opacity-0 z-[-1]'

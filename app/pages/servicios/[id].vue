@@ -34,7 +34,7 @@
           </p>
         </div>
         <div class="flex items-center gap-6">
-          <img src="/images/Auvo_tecnologia.png" alt="Auvo Logo" class="h-16 w-auto object-contain bg-white/5 p-3 rounded-2xl border border-white/10" />
+          <img src="/images/Auvo_tecnologia.png" alt="Plataforma AUVO de gestión y trazabilidad de servicios técnicos" class="h-16 w-auto object-contain bg-white/5 p-3 rounded-2xl border border-white/10" />
           <div class="text-left">
             <span class="block text-2xl font-display font-extrabold text-secondary-light">{{ service.metric.num }}</span>
             <span class="block text-xs text-slate-400 font-bold uppercase tracking-wider">{{ service.metric.lbl }}</span>
@@ -66,9 +66,72 @@ const service = computed(() => {
   return servicesData[serviceId.value as keyof typeof servicesData]
 })
 
-// Set Dynamic SEO details
+// Enhanced dynamic SEO meta
 useSeoMeta({
   title: () => service.value?.seoTitle || 'Servicios Especializados | MYT Ascensores',
-  description: () => service.value?.meta || 'Detalle del servicio de transporte vertical en MYT Ascensores. Asistencia técnica certificada por el MINVU.'
+  description: () => service.value?.meta || 'Detalle del servicio de transporte vertical en MYT Ascensores. Asistencia técnica certificada por el MINVU.',
+  ogTitle: () => service.value?.seoTitle || 'Servicios | MYT Ascensores',
+  ogDescription: () => service.value?.meta || 'Servicio técnico certificado MINVU para transporte vertical.',
+  ogUrl: () => `https://mytascensores.cl/servicios/${serviceId.value}`,
+  ogImage: () => service.value?.image ? `https://mytascensores.cl${service.value.image}` : 'https://mytascensores.cl/images/og-image.png',
+  twitterCard: 'summary_large_image',
+  twitterTitle: () => service.value?.seoTitle || 'Servicios | MYT Ascensores',
+  twitterDescription: () => service.value?.meta || 'Servicio técnico certificado MINVU.',
+  twitterImage: () => service.value?.image ? `https://mytascensores.cl${service.value.image}` : 'https://mytascensores.cl/images/og-image.png'
+})
+
+// Canonical URL + Service & BreadcrumbList structured data
+useHead({
+  link: [
+    { rel: 'canonical', href: computed(() => `https://mytascensores.cl/servicios/${serviceId.value}`) }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: computed(() => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: service.value?.title,
+        description: service.value?.meta,
+        provider: {
+          '@type': 'Organization',
+          name: 'MYT Ascensores',
+          url: 'https://mytascensores.cl'
+        },
+        areaServed: {
+          '@type': 'Country',
+          name: 'Chile'
+        },
+        serviceType: service.value?.category,
+        url: `https://mytascensores.cl/servicios/${serviceId.value}`
+      }))
+    },
+    {
+      type: 'application/ld+json',
+      innerHTML: computed(() => JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Inicio',
+            item: 'https://mytascensores.cl'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Servicios',
+            item: 'https://mytascensores.cl/#servicios'
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: service.value?.title
+          }
+        ]
+      }))
+    }
+  ]
 })
 </script>

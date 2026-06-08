@@ -12,6 +12,9 @@
     <!-- Services Section -->
     <ServicesSection />
 
+    <!-- Contact Section -->
+    <ContactSection />
+
     <!-- Process Section -->
     <ProcessSection />
 
@@ -43,9 +46,6 @@
 
     <!-- FAQ Section -->
     <FaqSection />
-
-    <!-- Contact Section -->
-    <ContactSection />
 
     <!-- Lightbox Modal -->
     <LightboxModal
@@ -133,11 +133,78 @@ const heroSlides = [
   }
 ]
 
+// Enhanced SEO meta for homepage
 useSeoMeta({
-  title: 'MYT Ascensores | Soluciones avanzadas de transporte vertical',
-  description: 'MYT Ascensores: mantención, reparación e instalación de ascensores en Chile. Servicio multimarca certificado MINVU con trazabilidad de reportes vía software AUVO.',
-  ogTitle: 'MYT Ascensores | Soluciones de Transporte Vertical',
-  ogDescription: 'Servicio técnico especializado multimarca para comunidades de edificios y empresas. Certificado MINVU y digitalización de trazabilidad técnica.'
+  title: 'MYT Ascensores | Mantención, Reparación e Instalación de Ascensores en Chile',
+  description: 'MYT Ascensores: empresa certificada MINVU especializada en mantención preventiva multimarca, reparación, normalización e instalación de ascensores en Chile. Trazabilidad digital vía AUVO. Soporte 24/7.',
+  ogTitle: 'MYT Ascensores | Soluciones de Transporte Vertical en Chile',
+  ogDescription: 'Servicio técnico certificado MINVU para ascensores, escaleras mecánicas y montacargas. Mantención preventiva multimarca, reparación y normalización. +450 equipos activos.',
+  ogUrl: 'https://mytascensores.cl',
+  ogImage: 'https://mytascensores.cl/images/og-image.png',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'MYT Ascensores | Transporte Vertical Certificado en Chile',
+  twitterDescription: 'Mantención, reparación e instalación de ascensores certificados por el MINVU. Servicio multimarca 24/7 con trazabilidad digital.',
+  twitterImage: 'https://mytascensores.cl/images/og-image.png'
+})
+
+// Canonical URL
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://mytascensores.cl/' }
+  ],
+  // FAQPage structured data for Google rich results
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: [
+          {
+            '@type': 'Question',
+            name: '¿Qué tipos de ascensores mantienen?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Somos una empresa multimarca que realiza pautas de mantenimiento técnico predictivo y preventivo para ascensores de pasajeros, montacargas, escaleras mecánicas y rampas de todas las marcas del mercado, incluyendo Schindler, Otis, thyssenkrupp, Mitsubishi, KONE, entre otras.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: '¿Están certificados por el MINVU?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Sí. MYT Ascensores se encuentra formalmente inscrita bajo el Rol N°256, Resolución N°1452 en el Registro Nacional de Proveedores Técnicos del Ministerio de Vivienda y Urbanismo, habilitándonos para la mantención periódica exigida por ley.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: '¿Ofrecen atención de emergencias?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Contamos con un servicio de emergencias permanente las 24 horas del día, los 365 días del año. Ante fallas críticas o personas atrapadas en cabina, despachamos de inmediato cuadrillas técnicas altamente especializadas.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: '¿Cómo puedo solicitar una cotización?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Puedes completar el formulario de contacto de esta web indicando tu requerimiento, escribirnos al WhatsApp, o llamarnos directamente. Coordinaremos una inspección técnica previa sin costo.'
+            }
+          },
+          {
+            '@type': 'Question',
+            name: '¿Qué incluye la mantención preventiva?',
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: 'Cada visita mensual incluye la inspección detallada de más de 50 puntos de control mecánico y eléctrico, lubricación de componentes móviles, limpieza técnica de pozo/sala de máquinas y la emisión del reporte digital vía AUVO.'
+            }
+          }
+        ]
+      })
+    }
+  ]
 })
 
 const lightboxIndex = ref(0)

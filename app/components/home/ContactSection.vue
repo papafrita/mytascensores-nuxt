@@ -1,7 +1,7 @@
 <template>
-  <section id="contacto" class="bg-primary text-white py-14 lg:py-16 relative overflow-hidden">
+  <section id="contacto" class="bg-surface py-14 lg:py-16 relative overflow-hidden">
     <!-- Subtle Glow Backgrounds -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-purple/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-purple/5 rounded-full blur-[120px] pointer-events-none"></div>
     <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan/5 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
@@ -9,43 +9,43 @@
         
         <!-- Left Column: Title & Direct Contact -->
         <div class="lg:col-span-5">
-          <span class="inline-flex items-center gap-2 font-display font-semibold text-secondary text-sm tracking-wider uppercase mb-3">
+          <span class="inline-flex items-center gap-2 font-display font-semibold text-cyan-dark text-sm tracking-wider uppercase mb-3">
             <Mail class="h-4 w-4" /> Formulario de contacto
           </span>
-          <h2 class="text-4xl font-extrabold font-display leading-[1.1] text-white">
+          <h2 class="text-4xl font-extrabold font-display leading-[1.1] text-navy">
             Cotiza con <span class="text-cyan">nosotros</span>
           </h2>
-          <p class="mt-5 text-base text-white/80 leading-relaxed font-light">
+          <p class="mt-5 text-base text-slate-600 leading-relaxed">
             Escríbenos para solicitar una pauta de mantención, programar una visita técnica de evaluación de tus ascensores o normalizar tu instalación ante observaciones del MINVU.
           </p>
 
-          <div class="mt-10 rounded-2xl bg-primary-dark/50 border border-white/10 p-6 md:p-8">
-            <h3 class="flex items-center gap-4 text-xl md:text-2xl font-extrabold font-display text-white">
-              <CircleHelp class="h-7 w-7 text-secondary" /> ¿Prefieres contactarnos directo?
+          <div class="mt-10 rounded-2xl bg-white border border-slate-100 p-6 md:p-8 shadow-premium">
+            <h3 class="flex items-center gap-4 text-xl md:text-2xl font-extrabold font-display text-navy">
+              <CircleHelp class="h-7 w-7 text-cyan" /> ¿Prefieres contactarnos directo?
             </h3>
-            <p class="mt-4 text-sm text-white/70 leading-relaxed">
+            <p class="mt-4 text-sm text-slate-500 leading-relaxed">
               Puedes comunicarte con nuestro equipo de ventas o llamar a nuestra línea de emergencias.
             </p>
             
             <div class="mt-6 grid gap-4 sm:grid-cols-2">
               <a 
                 href="tel:+56223536728" 
-                class="rounded-xl border-2 border-slate-700 hover:border-cyan p-4 font-semibold transition hover:bg-slate-800 flex flex-col gap-2 shadow-sm text-sm text-white"
+                class="rounded-xl border border-slate-100 hover:border-cyan hover:bg-slate-50 p-4 font-semibold transition hover:-translate-y-0.5 flex flex-col gap-2 shadow-sm text-sm text-navy group"
               >
-                <Headphones class="h-8 w-8 text-secondary" />
+                <Headphones class="h-8 w-8 text-cyan group-hover:scale-110 transition-transform duration-200" />
                 <span>Ventas</span>
-                <span class="mt-1 block text-sm sm:text-base font-bold whitespace-nowrap tracking-tight">
+                <span class="mt-1 block text-sm sm:text-base font-bold whitespace-nowrap tracking-tight text-navy">
                   +56 2 2353 6728
                 </span>
               </a>
               
               <a 
                 href="tel:+56931831327" 
-                class="rounded-xl bg-primary p-4 border border-white/10 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-primary-light flex flex-col gap-2 shadow-md"
+                class="rounded-xl bg-navy p-4 border border-navy/10 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-navy-light flex flex-col gap-2 shadow-md group"
               >
-                <AlertTriangle class="h-8 w-8 text-red-400 animate-pulse" />
+                <AlertTriangle class="h-8 w-8 text-red-400 animate-pulse group-hover:scale-110 transition-transform duration-200" />
                 <span>Emergencias</span>
-                <span class="mt-1 block text-sm sm:text-base font-bold whitespace-nowrap tracking-tight">
+                <span class="mt-1 block text-sm sm:text-base font-bold whitespace-nowrap tracking-tight text-cyan">
                   +56 9 3183 1327
                 </span>
               </a>
@@ -68,6 +68,22 @@
                   <h4 class="font-bold text-sm">¡Mensaje enviado con éxito!</h4>
                   <p class="text-xs text-white/95 mt-1">
                     Nos pondremos en contacto contigo en un plazo máximo de 24 horas hábiles.
+                  </p>
+                </div>
+              </div>
+            </Transition>
+
+            <!-- Error Message -->
+            <Transition name="fade">
+              <div 
+                v-if="showError" 
+                class="mb-6 p-4 rounded-xl bg-rose-500 text-white flex items-start gap-3 shadow-md border border-rose-600"
+              >
+                <AlertCircle class="h-6 w-6 flex-shrink-0 text-white mt-0.5" />
+                <div>
+                  <h4 class="font-bold text-sm">Error al enviar el mensaje</h4>
+                  <p class="text-xs text-white/95 mt-1">
+                    {{ errorMsg }}
                   </p>
                 </div>
               </div>
@@ -136,10 +152,20 @@
 
               <button 
                 type="submit" 
-                class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-purple hover:bg-purple-dark text-white font-bold py-4 transition-all duration-300 shadow-md shadow-purple/15 text-sm"
+                :disabled="isLoading"
+                class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-purple hover:bg-purple-dark text-white font-bold py-4 transition-all duration-300 shadow-md shadow-purple/15 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Enviar cotización técnica
-                <ArrowUpRight class="h-4.5 w-4.5" />
+                <span v-if="isLoading" class="flex items-center gap-2">
+                  <span>Enviando...</span>
+                  <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                </span>
+                <span v-else class="flex items-center gap-2">
+                  Enviar cotización técnica
+                  <ArrowUpRight class="h-4.5 w-4.5" />
+                </span>
               </button>
             </form>
 
@@ -153,9 +179,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Mail, CircleHelp, Headphones, AlertTriangle, ArrowUpRight, CheckCircle } from 'lucide-vue-next'
+import { Mail, CircleHelp, Headphones, AlertTriangle, ArrowUpRight, CheckCircle, AlertCircle } from 'lucide-vue-next'
 
 const showSuccess = ref(false)
+const showError = ref(false)
+const isLoading = ref(false)
+const errorMsg = ref('')
 
 const form = ref({
   name: '',
@@ -164,24 +193,47 @@ const form = ref({
   message: ''
 })
 
-const handleSubmit = () => {
-  // Simulate API submission
-  showSuccess.value = true
-  
-  // Clear inputs after brief delay
-  setTimeout(() => {
+const handleSubmit = async () => {
+  isLoading.value = true
+  showSuccess.value = false
+  showError.value = false
+  errorMsg.value = ''
+
+  try {
+    await $fetch('/api/contact', {
+      method: 'POST',
+      body: form.value
+    })
+
+    showSuccess.value = true
+    
+    // Clear inputs after submission
     form.value = {
       name: '',
       email: '',
       subject: 'Mantenimiento Multimarca',
       message: ''
     }
-  }, 500)
 
-  // Hide success notification after 6s
-  setTimeout(() => {
-    showSuccess.value = false
-  }, 6000)
+    // Hide success notification after 8s
+    setTimeout(() => {
+      showSuccess.value = false
+    }, 8000)
+  } catch (err: any) {
+    console.error('Submission error:', err)
+    showError.value = true
+    
+    // If the error has a statusMessage, use that, otherwise default to a generic message
+    const responseData = err.data || {}
+    errorMsg.value = responseData.statusMessage || err.statusMessage || err.message || 'Error al enviar el mensaje. Intente de nuevo.'
+    
+    // Hide error notification after 8s
+    setTimeout(() => {
+      showError.value = false
+    }, 8000)
+  } finally {
+    isLoading.value = false
+  }
 }
 </script>
 
