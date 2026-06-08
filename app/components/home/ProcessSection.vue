@@ -19,7 +19,7 @@
         <!-- Left: Image with Stat Overlays -->
         <div class="lg:col-span-5 relative">
           <div class="relative rounded-3xl overflow-hidden shadow-premium">
-            <img src="/images/misc/building.png" alt="Proceso de trabajo" class="w-full h-auto object-cover min-h-[400px]" />
+            <img src="/images/misc/building.webp" alt="Proceso de trabajo" width="854" height="518" loading="lazy" decoding="async" class="w-full h-auto object-cover min-h-[400px]" />
             <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent"></div>
           </div>
           

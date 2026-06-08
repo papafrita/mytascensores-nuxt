@@ -3,31 +3,22 @@
     <div 
       class="relative rounded-xl overflow-hidden shadow-premium bg-slate-900" 
       :style="{ minHeight: minHeight }"
-      @mouseenter="pauseAutoplay"
+      @mouseenter="stopAutoplay"
       @mouseleave="startAutoplay"
     >
-      <!-- Background Slides (Stacked) -->
-      <div 
-        v-for="(slide, index) in computedSlides" 
-        :key="index"
-        role="img"
-        :aria-label="slide.title"
-        class="absolute inset-0 transition-opacity duration-1000 ease-in-out bg-cover bg-center"
-        :class="[
-          index === activeSlideIndex ? 'opacity-100 z-0' : 'opacity-0 z-[-1]'
-        ]"
-        :style="{ backgroundImage: `url(${slide.backgroundImage})` }"
-      >
-        <!-- Zoom (Ken Burns) effect on active background -->
-        <div 
-          v-if="index === activeSlideIndex" 
-          class="absolute inset-0 bg-cover bg-center animate-kenburns"
-          :style="{ backgroundImage: `url(${slide.backgroundImage})` }"
+      <!-- Active Background Slide -->
+      <transition name="hero-bg-fade" mode="out-in">
+        <div
+          :key="activeSlideIndex"
+          role="img"
+          :aria-label="computedSlides[activeSlideIndex].title"
+          class="absolute inset-0 z-0 bg-cover bg-center animate-kenburns"
+          :style="{ backgroundImage: `url(${computedSlides[activeSlideIndex].backgroundImage})` }"
         ></div>
-        
-        <!-- Hero Gradient Overlay -->
-        <div class="absolute inset-0 hero-gradient-overlay z-10"></div>
-      </div>
+      </transition>
+
+      <!-- Hero Gradient Overlay -->
+      <div class="absolute inset-0 hero-gradient-overlay z-10"></div>
       
       <!-- Carousel Content Container -->
       <div class="relative z-20 flex h-full items-center px-6 py-16 md:px-12 lg:px-20" :style="{ minHeight: minHeight }">
@@ -175,7 +166,34 @@ const computedSlides = computed<Slide[]>(() => {
 })
 
 const activeSlideIndex = ref(0)
+const warmedSlideIndexes = new Set<number>([0])
 let autoplayTimer: any = null
+
+const warmSlideImage = (index: number) => {
+  if (index < 0 || index >= computedSlides.value.length) return
+  if (warmedSlideIndexes.has(index)) return
+
+  const src = computedSlides.value[index]?.backgroundImage
+  if (!src || typeof window === 'undefined') return
+
+  const load = () => {
+    const img = new Image()
+    img.decoding = 'async'
+    img.src = src
+    warmedSlideIndexes.add(index)
+  }
+
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(load, { timeout: 2000 })
+  } else {
+    window.setTimeout(load, 250)
+  }
+}
+
+const warmNextSlideImage = () => {
+  if (computedSlides.value.length <= 1) return
+  warmSlideImage((activeSlideIndex.value + 1) % computedSlides.value.length)
+}
 
 const startAutoplay = () => {
   if (computedSlides.value.length <= 1) return
@@ -194,17 +212,22 @@ const stopAutoplay = () => {
 
 const nextSlide = () => {
   activeSlideIndex.value = (activeSlideIndex.value + 1) % computedSlides.value.length
+  warmNextSlideImage()
 }
 
 const prevSlide = () => {
   activeSlideIndex.value = (activeSlideIndex.value - 1 + computedSlides.value.length) % computedSlides.value.length
+  warmNextSlideImage()
 }
 
 const goToSlide = (index: number) => {
   activeSlideIndex.value = index
+  warmNextSlideImage()
 }
 
 onMounted(() => {
+  warmedSlideIndexes.add(activeSlideIndex.value)
+  warmNextSlideImage()
   startAutoplay()
 })
 
@@ -226,6 +249,16 @@ onBeforeUnmount(() => {
 
 .animate-kenburns {
   animation: kenburns 8s ease-out forwards;
+}
+
+/* Background fade transition */
+.hero-bg-fade-enter-active,
+.hero-bg-fade-leave-active {
+  transition: opacity 0.8s ease-in-out;
+}
+.hero-bg-fade-enter-from,
+.hero-bg-fade-leave-to {
+  opacity: 0;
 }
 
 /* Slide fade transition */

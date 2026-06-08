@@ -22,7 +22,12 @@
           >
             <img 
               :src="img.src" 
-              :alt="img.title" 
+              :alt="img.title"
+              width="640"
+              height="480"
+              loading="lazy"
+              decoding="async"
+              fetchpriority="low"
               class="w-full h-full object-cover transition-transform duration-700 group-hover/slide:scale-110 opacity-90 group-hover/slide:opacity-100" 
             />
             <!-- Hover Overlay -->
@@ -84,14 +89,14 @@ import { Maximize2, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-vue-n
 defineEmits(['open-lightbox'])
 
 const images = [
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM.jpeg', title: 'Inspección Técnica de Cabina y Sistemas' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (1).jpeg', title: 'Mantenimiento Preventivo de Poleas y Tracción' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (2).jpeg', title: 'Modernización de Equipos y Tableros de Control' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (3).jpeg', title: 'Servicio Técnico Especializado Multimarca' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (4).jpeg', title: 'Instalación y Ajuste de Sistemas de Seguridad' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.41 PM.jpeg', title: 'Inspección de Motores y Limitadores de Velocidad' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.41 PM (1).jpeg', title: 'Calibración de Sensores e Indicadores Digitales' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.41 PM (2).jpeg', title: 'Control de Calidad y Entrega de Proyectos' }
+  { src: '/images/gallery/thumbs/gallery-01.webp', title: 'Inspección Técnica de Cabina y Sistemas' },
+  { src: '/images/gallery/thumbs/gallery-02.webp', title: 'Mantenimiento Preventivo de Poleas y Tracción' },
+  { src: '/images/gallery/thumbs/gallery-03.webp', title: 'Modernización de Equipos y Tableros de Control' },
+  { src: '/images/gallery/thumbs/gallery-04.webp', title: 'Servicio Técnico Especializado Multimarca' },
+  { src: '/images/gallery/thumbs/gallery-05.webp', title: 'Instalación y Ajuste de Sistemas de Seguridad' },
+  { src: '/images/gallery/thumbs/gallery-06.webp', title: 'Inspección de Motores y Limitadores de Velocidad' },
+  { src: '/images/gallery/thumbs/gallery-07.webp', title: 'Calibración de Sensores e Indicadores Digitales' },
+  { src: '/images/gallery/thumbs/gallery-08.webp', title: 'Control de Calidad y Entrega de Proyectos' }
 ]
 
 const currentIndex = ref(0)

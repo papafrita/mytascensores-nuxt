@@ -36,7 +36,8 @@
             <img 
               :key="modelValue"
               :src="images[modelValue].src" 
-              :alt="images[modelValue].title" 
+              :alt="images[modelValue].title"
+              decoding="async"
               class="max-w-full max-h-[70vh] rounded-xl object-contain shadow-2xl border border-white/5"
             />
           </Transition>
