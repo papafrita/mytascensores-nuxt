@@ -75,7 +75,7 @@ const heroSlides = [
     tag: 'Transporte Vertical Certificado',
     title: 'Ascensores Modernos y Seguros',
     subtitle: 'Mantenimiento preventivo multimarca mensual, reparaciones y modernizaciones integrales bajo la normativa MINVU chilena.',
-    backgroundImage: '/images/hero-ascensores.png',
+    backgroundImage: '/images/hero-ascensores.webp',
     badges: [
       'Registro MINVU Certificado',
       'Software de Gestión AUVO',
@@ -90,7 +90,7 @@ const heroSlides = [
     tag: 'Alto Tránsito y Rendimiento',
     title: 'Escaleras Mecánicas de Alta Gama',
     subtitle: 'Soluciones de transporte continuo y seguro para centros comerciales, aeropuertos y estaciones de alto tránsito.',
-    backgroundImage: '/images/hero-escaleras.png',
+    backgroundImage: '/images/hero-escaleras.webp',
     badges: [
       'Mantenimiento Especializado',
       'Seguridad Certificada',
@@ -105,7 +105,7 @@ const heroSlides = [
     tag: 'Uso Industrial y Comercial',
     title: 'Montacargas Robustos e Industriales',
     subtitle: 'Diseño, instalación y mantención de equipos de carga de gran resistencia, optimizando la logística de su empresa o bodega.',
-    backgroundImage: '/images/hero-montacargas.png',
+    backgroundImage: '/images/hero-montacargas.webp',
     badges: [
       'Capacidad de Carga Pesada',
       'Estructuras Reforzadas',
@@ -120,7 +120,7 @@ const heroSlides = [
     tag: 'Accesibilidad Universal',
     title: 'Plataformas e Inclusión sin Límites',
     subtitle: 'Sistemas de elevación vertical e inclinada diseñados para facilitar la movilidad de personas con discapacidad en todo tipo de edificaciones.',
-    backgroundImage: '/images/hero-plataformas.png',
+    backgroundImage: '/images/hero-plataformas.webp',
     badges: [
       'Accesibilidad Universal',
       'Instalación Rápida y Limpia',
@@ -151,7 +151,8 @@ useSeoMeta({
 // Canonical URL
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://mytascensores.cl/' }
+    { rel: 'canonical', href: 'https://mytascensores.cl/' },
+    { rel: 'preload', as: 'image', href: '/images/hero-ascensores.webp', fetchpriority: 'high' }
   ],
   // FAQPage structured data for Google rich results
   script: [

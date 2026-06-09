@@ -24,6 +24,18 @@ export default defineNuxtConfig({
     ]
   },
 
+  nitro: {
+    prerender: {
+      routes: [
+        '/servicios/mantenimiento',
+        '/servicios/reparacion',
+        '/servicios/importacion',
+        '/servicios/correctivo'
+      ],
+      autoSubfolderIndex: false
+    }
+  },
+
   app: {
     head: {
       htmlAttrs: { lang: 'es', class: 'scroll-smooth' },
@@ -34,7 +46,7 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap'
         },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ],

@@ -1,75 +1,68 @@
-# Nuxt Minimal Starter
+# MYT Ascensores
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 4 marketing site for MYT Ascensores, configured for static generation and Cloudflare Pages deployment.
 
-## Setup
+## Requirements
 
-Make sure to install dependencies:
+- Node.js 20+ recommended
+- npm
+- Cloudflare Wrangler CLI, installed through project dependencies
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Install dependencies:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+npm ci
 ```
 
-## Production
+## Development
 
-Build the application for production:
+Run the Nuxt dev server:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+make dev
 ```
 
-Locally preview production build:
+The site will be available at the URL printed by Nuxt, usually `http://localhost:3000`.
+
+## Static build
+
+Generate the static site into `.output/public`:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+make build
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This runs `nuxt generate` and prerenders the known static routes, including the service detail pages.
+
+## Deploy to Cloudflare Pages
+
+Authenticate Wrangler once:
+
+```bash
+npx wrangler login
+```
+
+Deploy the latest generated build:
+
+```bash
+CF_PAGES_PROJECT_NAME=<cloudflare-pages-project> make deploy
+```
+
+`make deploy` uploads `.output/public` using:
+
+```bash
+npx wrangler pages deploy .output/public --project-name "$CF_PAGES_PROJECT_NAME"
+```
+
+Run `make build` before `make deploy` whenever you want to publish fresh changes.
+
+## Cloudflare Pages Git integration
+
+If deploying through Cloudflare's Git integration instead of the CLI, use:
+
+```txt
+Build command: npm run build
+Build output directory: .output/public
+```
+
+The `public/_redirects` file provides a static fallback to `200.html` for client-side navigation on refresh.

@@ -16,7 +16,11 @@
           >
             <img 
               src="/images/Auvo_tecnologia.png" 
-              alt="Auvo Logo" 
+              alt="Auvo Logo"
+              width="1200"
+              height="1200"
+              loading="lazy"
+              decoding="async"
               class="h-28 md:h-32 w-auto object-contain transition-all duration-300 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98] cursor-pointer" 
             />
           </a>
@@ -51,8 +55,12 @@
       <div class="relative z-10 lg:w-1/2 flex justify-center lg:justify-end w-full">
         <div class="relative w-full max-w-[340px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.55)] group transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:drop-shadow-[0_25px_50px_rgba(6,182,212,0.25)]">
           <img 
-            src="/images/misc/auvo-mockup.png" 
-            alt="AUVO Client App" 
+            src="/images/misc/auvo-mockup.webp" 
+            alt="AUVO Client App"
+            width="464"
+            height="920"
+            loading="lazy"
+            decoding="async"
             class="w-full h-auto object-contain rounded-[44px] animate-float"
           />
           <div class="absolute bottom-5 left-0 right-0 flex justify-center">
