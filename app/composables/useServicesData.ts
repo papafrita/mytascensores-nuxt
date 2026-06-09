@@ -61,11 +61,11 @@ export const useServicesData = () => {
         { phase: 'Paso 4', title: 'Emisión de Ficha en AUVO', desc: 'El informe técnico digital se firma y se sube automáticamente a la plataforma para el seguimiento histórico transparente de la comunidad.' }
       ],
       metrics: [
-        { num: '+250', lbl: 'Equipos' },
-        { num: '+120', lbl: 'Servicios' },
+        { num: '+450', lbl: 'Equipos' },
+        { num: '+600', lbl: 'Servicios' },
         { num: '100%', lbl: 'Garantía' }
       ],
-      metric: { num: '+250', lbl: 'Equipos Activos Mantenidos' }
+      metric: { num: '+450', lbl: 'Equipos Activos Mantenidos' }
     },
     reparacion: {
       category: 'Servicio Correctivo',
