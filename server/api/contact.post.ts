@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
   // Access runtime config (properly injected by Nuxt from .env)
   const config = useRuntimeConfig(event)
   const resendApiKey = config.resendApiKey as string
-  const contactReceiver = (config.contactReceiver as string) || 'tomaxio@gmail.com'
+  const contactReceiver = (config.contactReceiver as string) || 'contacto@mytascensores.cl'
 
   if (!resendApiKey) {
     console.error('RESEND_API_KEY is not configured in .env')

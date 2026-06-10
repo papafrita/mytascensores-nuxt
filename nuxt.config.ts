@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY || '',
-    contactReceiver: process.env.CONTACT_RECEIVER || 'tomaxio@gmail.com'
+    contactReceiver: process.env.CONTACT_RECEIVER || 'contacto@mytascensores.cl'
   },
 
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
