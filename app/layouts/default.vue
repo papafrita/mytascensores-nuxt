@@ -7,7 +7,7 @@
       <slot />
     </main>
     <TheFooter />
-    <WhatsAppFab />
+    <!-- <WhatsAppFab /> -->
   </div>
 </template>
 

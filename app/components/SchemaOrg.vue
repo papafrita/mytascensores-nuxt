@@ -12,7 +12,7 @@ const organizationSchema = {
   'url': 'https://mytascensores.cl',
   'logo': 'https://mytascensores.cl/images/logo-myt.png',
   'description': 'Empresa chilena especializada en mantención, reparación e instalación de ascensores. Servicio multimarca certificado MINVU.',
-  'telephone': ['+56223536728', '+56931831327'],
+  'telephone': ['+56323536728', '+56931831327'],
   'email': 'contacto@mytascensores.cl',
   'areaServed': {
     '@type': 'Country',

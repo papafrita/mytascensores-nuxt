@@ -29,13 +29,13 @@
             
             <div class="mt-6 grid gap-4 sm:grid-cols-2">
               <a 
-                href="tel:+56223536728" 
+                href="tel:+56323536728" 
                 class="rounded-xl border border-slate-100 hover:border-cyan hover:bg-slate-50 p-4 font-semibold transition hover:-translate-y-0.5 flex flex-col gap-2 shadow-sm text-sm text-navy group"
               >
                 <Headphones class="h-8 w-8 text-cyan group-hover:scale-110 transition-transform duration-200" />
                 <span>Ventas</span>
                 <span class="mt-1 block text-sm sm:text-base font-bold whitespace-nowrap tracking-tight text-navy">
-                  +56 2 2353 6728
+                  +56 32 353 6728
                 </span>
               </a>
               
