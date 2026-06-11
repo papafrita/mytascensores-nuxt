@@ -1,19 +1,19 @@
 <template>
-  <footer class="bg-primary text-white py-12 border-t border-white/5 relative overflow-hidden">
+  <footer class="bg-primary text-white py-8 border-t border-white/5 relative overflow-hidden">
     <!-- Subtle element -->
     <div class="absolute bottom-0 right-0 w-80 h-80 bg-purple/5 rounded-full blur-[100px] pointer-events-none"></div>
 
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="flex flex-col gap-10 md:flex-row md:items-center md:justify-between border-b border-white/10 pb-8">
-        <div>
-          <NuxtLink to="/" class="inline-block">
-            <img src="/images/logo-blanco.png" alt="MYT Ascensores" width="248" height="157" loading="lazy" decoding="async" class="h-24 w-auto md:h-28 object-contain" />
+      <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between border-b border-white/10 pb-6">
+        <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+          <NuxtLink to="/" class="inline-block flex-shrink-0">
+            <img src="/images/logo-blanco.png" alt="MYT Ascensores" width="248" height="157" loading="lazy" decoding="async" class="h-[86px] md:h-[130px] w-auto object-contain" />
           </NuxtLink>
-          <p class="mt-6 max-w-xl text-slate-400 leading-relaxed font-light text-sm">
+          <p class="max-w-md text-slate-400 leading-relaxed font-light text-xs md:text-sm md:border-l md:border-white/10 md:pl-6">
             Empresa especializada en mantención, reparación e instalación de ascensores en Chile. Servicio técnico certificado MINVU.
           </p>
         </div>
-        <nav aria-label="Enlaces del sitio" class="flex flex-wrap gap-9 text-slate-400 font-semibold text-sm">
+        <nav aria-label="Enlaces del sitio" class="flex flex-wrap gap-x-5 gap-y-2 text-slate-400 font-semibold text-xs md:text-sm lg:flex-nowrap whitespace-nowrap">
           <NuxtLink class="hover:text-secondary transition-colors" to="/">Inicio</NuxtLink>
           <NuxtLink class="hover:text-secondary transition-colors" to="/nosotros">Nosotros</NuxtLink>
           <NuxtLink class="hover:text-secondary transition-colors" to="/#servicios">Servicios</NuxtLink>
@@ -23,7 +23,7 @@
         </nav>
       </div>
       
-      <div class="mt-8 flex flex-col gap-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+      <div class="mt-6 flex flex-col gap-4 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
         <p>© 2026 MYT Ascensores. Todos los derechos reservados.</p>
         <div class="flex gap-4">
           <a href="https://facebook.com/mytascensores" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-secondary transition-colors p-1 flex items-center justify-center h-7 w-7" aria-label="Facebook">

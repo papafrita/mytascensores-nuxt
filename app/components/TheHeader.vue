@@ -19,7 +19,7 @@
           {{ link.name }}
         </NuxtLink>
         
-        <NuxtLink class="inline-flex items-center gap-2 rounded-lg bg-cyan border border-cyan px-5 py-3 font-semibold text-white hover:bg-cyan-dark hover:border-cyan-dark shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all text-sm" to="/#contacto">
+        <NuxtLink class="inline-flex items-center gap-2 rounded-lg bg-tertiary border border-tertiary px-5 py-3 font-semibold text-white hover:bg-tertiary-dark hover:border-tertiary-dark shadow-sm hover:shadow-md transform hover:-translate-y-0.5 transition-all text-sm" to="/#contacto">
           Solicitar cotización 
           <ArrowUpRight class="h-4 w-4" />
         </NuxtLink>
@@ -42,7 +42,7 @@
           {{ link.name }}
         </NuxtLink>
         <hr class="border-slate-100 my-2" />
-        <NuxtLink class="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan border border-cyan py-4 font-bold text-white shadow-sm hover:bg-cyan-dark hover:border-cyan-dark transition-all" to="/#contacto" @click="isMenuOpen = false">
+        <NuxtLink class="inline-flex items-center justify-center gap-2 rounded-xl bg-tertiary border border-tertiary py-4 font-bold text-white shadow-sm hover:bg-tertiary-dark hover:border-tertiary-dark transition-all" to="/#contacto" @click="isMenuOpen = false">
           Solicitar Cotización 
           <ArrowUpRight class="h-4.5 w-4.5" />
         </NuxtLink>

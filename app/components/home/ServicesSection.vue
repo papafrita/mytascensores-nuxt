@@ -74,68 +74,72 @@
         <!-- Detail Card -->
         <div class="lg:col-span-5">
           <div class="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-premium text-ink flex flex-col h-full min-h-[460px] relative">
-            <!-- Card Header -->
-            <div class="bg-primary px-6 py-6 text-white flex items-center gap-4 relative">
-              <span class="rounded-xl bg-white/10 border border-white/10 p-3 flex items-center justify-center text-white">
-                <component :is="getIconComponent(activeService.icon)" class="h-6 w-6" />
-              </span>
-              <div>
-                <span class="text-[10px] font-extrabold uppercase tracking-wider text-secondary">
-                  {{ activeService.category }}
-                </span>
-                <h3 class="font-display font-extrabold text-2xl md:text-3xl mt-0.5 leading-snug">
-                  {{ activeService.title }}
-                </h3>
-              </div>
-            </div>
-
-            <!-- Card Body -->
-            <div class="p-6 flex-grow flex flex-col justify-between">
-              <div>
-                <p class="text-slate-600 text-sm leading-relaxed mb-6 font-medium">
-                  {{ activeService.description }}
-                </p>
-                
-                <h4 class="text-xs font-bold uppercase tracking-wider text-navy mb-3">Qué incluye el servicio:</h4>
-                <ul class="space-y-3 mb-8">
-                  <li 
-                    v-for="feat in activeService.features" 
-                    :key="feat"
-                    class="flex items-center gap-3 text-sm text-slate-700 font-medium"
-                  >
-                    <span class="flex-shrink-0 rounded-full bg-secondary/10 p-1 text-secondary-dark flex items-center justify-center">
-                      <Check class="h-3 w-3" />
+            <Transition name="fade" mode="out-in">
+              <div :key="activeServiceKey" class="flex flex-col h-full flex-grow">
+                <!-- Card Header -->
+                <div class="bg-white px-6 py-6 text-navy flex items-center gap-4 relative border-b border-slate-100">
+                  <span class="rounded-xl bg-secondary/15 border border-secondary/10 p-3 flex items-center justify-center text-secondary">
+                    <component :is="getIconComponent(activeService.icon)" class="h-6 w-6" />
+                  </span>
+                  <div>
+                    <span class="text-[10px] font-extrabold uppercase tracking-wider text-secondary-dark">
+                      {{ activeService.category }}
                     </span>
-                    <span>{{ feat }}</span>
-                  </li>
-                </ul>
-              </div>
+                    <h3 class="font-display font-extrabold text-2xl md:text-3xl mt-0.5 leading-snug text-navy">
+                      {{ activeService.title }}
+                    </h3>
+                  </div>
+                </div>
 
-              <!-- Footer CTA and Metrics -->
-              <div>
-                <div class="border-t border-slate-100 pt-6 mt-auto">
-                  <div class="grid grid-cols-3 gap-2 mb-6">
-                    <div 
-                      v-for="metric in activeService.metrics" 
-                      :key="metric.lbl"
-                      class="text-center p-3 bg-surface rounded-xl border border-slate-50"
-                    >
-                      <span class="block text-lg font-extrabold font-display text-navy leading-none">{{ metric.num }}</span>
-                      <span class="text-[10px] font-bold text-slate-400 uppercase mt-1 block tracking-wider">{{ metric.lbl }}</span>
+                <!-- Card Body -->
+                <div class="p-6 flex-grow flex flex-col justify-between">
+                  <div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 font-medium">
+                      {{ activeService.description }}
+                    </p>
+                    
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-navy mb-3">Qué incluye el servicio:</h4>
+                    <ul class="space-y-3 mb-8">
+                      <li 
+                        v-for="feat in activeService.features" 
+                        :key="feat"
+                        class="flex items-center gap-3 text-sm text-slate-700 font-medium"
+                      >
+                        <span class="flex-shrink-0 rounded-full bg-secondary/10 p-1 text-secondary-dark flex items-center justify-center">
+                          <Check class="h-3 w-3" />
+                        </span>
+                        <span>{{ feat }}</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Footer CTA and Metrics -->
+                  <div>
+                    <div class="border-t border-slate-100 pt-6 mt-auto">
+                      <div class="grid grid-cols-3 gap-2 mb-6">
+                        <div 
+                          v-for="metric in activeService.metrics" 
+                          :key="metric.lbl"
+                          class="text-center p-3 bg-surface rounded-xl border border-slate-50"
+                        >
+                          <span class="block text-lg font-extrabold font-display text-navy leading-none">{{ metric.num }}</span>
+                          <span class="text-[10px] font-bold text-slate-400 uppercase mt-1 block tracking-wider">{{ metric.lbl }}</span>
+                        </div>
+                      </div>
+                      
+                      <NuxtLink 
+                        :to="`/servicios/${activeServiceKey}`"
+                        class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-tertiary hover:bg-tertiary-dark text-white font-bold py-4 transition-all duration-300 shadow-md shadow-tertiary/15 text-sm"
+                      >
+                        Conocer detalles del servicio
+                        <ArrowUpRight class="h-4.5 w-4.5" />
+                      </NuxtLink>
                     </div>
                   </div>
-                  
-                  <NuxtLink 
-                    :to="`/servicios/${activeServiceKey}`"
-                    class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-cyan hover:bg-cyan-dark text-white font-bold py-4 transition-all duration-300 shadow-md shadow-cyan/15 text-sm"
-                  >
-                    Conocer detalles del servicio
-                    <ArrowUpRight class="h-4.5 w-4.5" />
-                  </NuxtLink>
+
                 </div>
               </div>
-
-            </div>
+            </Transition>
           </div>
         </div>
 
@@ -178,3 +182,16 @@ const getIconComponent = (iconName: string) => {
   }
 }
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
+</style>

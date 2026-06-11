@@ -148,11 +148,14 @@ useSeoMeta({
   twitterImage: 'https://mytascensores.cl/images/og-image.png'
 })
 
-// Canonical URL
+// Canonical URL & Image preloading for instant carousel transitions
 useHead({
   link: [
     { rel: 'canonical', href: 'https://mytascensores.cl/' },
-    { rel: 'preload', as: 'image', href: '/images/hero-ascensores.webp', fetchpriority: 'high' }
+    { rel: 'preload', as: 'image', href: '/images/hero-ascensores.webp', fetchpriority: 'high' },
+    { rel: 'preload', as: 'image', href: '/images/hero-escaleras.webp' },
+    { rel: 'preload', as: 'image', href: '/images/hero-montacargas.webp' },
+    { rel: 'preload', as: 'image', href: '/images/hero-plataformas.webp' }
   ],
   // FAQPage structured data for Google rich results
   script: [

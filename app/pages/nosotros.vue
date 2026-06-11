@@ -27,7 +27,7 @@
             Nuestros procesos integran tecnología de punta como el software <strong>Auvo</strong>, permitiéndonos ofrecer un seguimiento detallado y transparente en tiempo real para cada uno de los servicios. Brindamos una atención profesional robusta que abarca desde la mantención preventiva multimarca mensual hasta proyectos de importación, instalación y modernización a gran escala.
           </p>
           <div class="flex flex-wrap gap-4">
-            <NuxtLink to="/#contacto" class="inline-flex items-center gap-2 rounded-xl bg-primary hover:bg-secondary text-white font-bold px-6 py-4 transition-all duration-300 transform hover:-translate-y-0.5 shadow-md shadow-primary/15 text-sm">
+            <NuxtLink to="/#contacto" class="inline-flex items-center gap-2 rounded-xl bg-tertiary hover:bg-tertiary-dark text-white font-bold px-6 py-4 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-tertiary/15 text-sm">
               Contactar a un asesor <ArrowUpRight class="h-4 w-4" />
             </NuxtLink>
           </div>

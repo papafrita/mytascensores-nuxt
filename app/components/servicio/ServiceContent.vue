@@ -56,34 +56,7 @@ defineProps<{
       </ul>
     </div>
 
-    <!-- Service Steps / Metodología -->
-    <div class="bg-white rounded-3xl p-8 md:p-10 shadow-premium border border-slate-100/50">
-      <h2 class="text-2xl md:text-3xl font-extrabold font-display text-navy flex items-center gap-3 mb-8">
-        <span class="h-8 w-1 bg-cyan rounded-full" /> Nuestro Plan de Trabajo
-      </h2>
-      <div class="space-y-6 relative before:absolute before:left-6 before:top-4 before:bottom-4 before:w-0.5 before:bg-slate-100">
-        <div
-          v-for="(step, idx) in service.steps"
-          :key="idx"
-          class="relative pl-12 md:pl-16 group/step"
-        >
-          <span
-            class="absolute left-1.5 top-0 flex h-9 w-9 items-center justify-center rounded-full bg-white border-2 border-slate-200 text-xs font-bold text-slate-500 group-hover/step:border-cyan group-hover/step:text-cyan transition-colors z-10 shadow-sm"
-          >
-            {{ step.phase.split(' ')[1] }}
-          </span>
-          <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-cyan">{{ step.phase }}</span>
-            <h4 class="text-base md:text-lg font-bold text-navy mt-0.5 transition-colors group-hover/step:text-cyan">
-              {{ step.title }}
-            </h4>
-            <p class="mt-1 text-xs md:text-sm text-slate-500 leading-relaxed">
-              {{ step.desc }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
 </template>
 

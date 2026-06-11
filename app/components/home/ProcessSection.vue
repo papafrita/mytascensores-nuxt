@@ -51,28 +51,27 @@
           <div 
             v-for="(step, index) in steps" 
             :key="step.phase"
-            class="relative pl-12 md:pl-16 group/step flex items-start gap-4"
+            class="relative pl-10 md:pl-12 group/step flex items-start gap-4"
           >
             <!-- Connecting line for mobile/desktop layout (we can style using step-line or absolute div) -->
             <div 
               v-if="index < steps.length - 1" 
-              class="absolute left-6 md:left-8 top-12 bottom-0 w-0.5 border-l-2 border-dashed border-slate-200"
+              class="absolute left-5 md:left-6 top-11 bottom-0 w-0.5 border-l-2 border-dashed border-slate-200"
             ></div>
 
             <!-- Step Number Icon -->
-            <span class="absolute left-1.5 md:left-3 top-0 flex h-9 w-9 items-center justify-center rounded-full bg-white border-2 border-slate-200 text-xs font-bold text-slate-500 group-hover/step:border-cyan group-hover/step:text-cyan transition-colors z-10 shadow-sm">
+            <span class="absolute left-1 md:left-2 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-white border-2 border-slate-200 text-xs font-bold text-slate-500 group-hover/step:border-cyan group-hover/step:text-cyan transition-colors z-10 shadow-sm">
               {{ index + 1 }}
             </span>
 
             <!-- Content Card -->
-            <div class="bg-surface rounded-xl p-5 border border-transparent hover:border-cyan/30 hover:bg-white hover:shadow-premium transition-all duration-300 w-full flex gap-4">
+            <div class="bg-surface rounded-xl p-4 border border-transparent hover:border-cyan/30 hover:bg-white hover:shadow-premium transition-all duration-300 w-full flex gap-4">
               <span class="rounded-lg bg-white p-2.5 shadow-sm text-cyan flex items-center justify-center h-10 w-10 border border-slate-100">
                 <component :is="step.icon" class="h-5 w-5" />
               </span>
               <div>
-                <span class="text-[10px] font-bold uppercase tracking-wider text-cyan">{{ step.phase }}</span>
                 <h3 class="text-base md:text-lg font-bold text-navy mt-0.5 transition-colors group-hover/step:text-cyan">
-                  {{ step.title }}
+                  <span class="text-cyan font-semibold mr-1.5">{{ step.phase }}:</span>{{ step.title }}
                 </h3>
                 <p class="mt-1 text-xs md:text-sm text-slate-500 leading-relaxed">
                   {{ step.desc }}

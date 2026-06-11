@@ -6,22 +6,29 @@
       @mouseenter="stopAutoplay"
       @mouseleave="startAutoplay"
     >
-      <!-- Active Background Slide -->
-      <transition name="hero-bg-fade" mode="out-in">
-        <div
-          :key="activeSlideIndex"
-          role="img"
-          :aria-label="computedSlides[activeSlideIndex].title"
-          class="absolute inset-0 z-0 bg-cover bg-center animate-kenburns"
-          :style="{ backgroundImage: `url(${computedSlides[activeSlideIndex].backgroundImage})` }"
+      <!-- Stacked Background Slides for Parallel Fading & Preloading -->
+      <div 
+        v-for="(slide, index) in computedSlides" 
+        :key="index"
+        class="absolute inset-0 transition-opacity duration-1000 ease-in-out bg-cover bg-center"
+        :class="[
+          index === activeSlideIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+        ]"
+        :style="{ backgroundImage: `url(${slide.backgroundImage})` }"
+      >
+        <!-- Ken Burns effect on active background -->
+        <div 
+          v-if="index === activeSlideIndex" 
+          class="absolute inset-0 bg-cover bg-center animate-kenburns"
+          :style="{ backgroundImage: `url(${slide.backgroundImage})` }"
         ></div>
-      </transition>
+      </div>
 
       <!-- Hero Gradient Overlay -->
-      <div class="absolute inset-0 hero-gradient-overlay z-10"></div>
+      <div class="absolute inset-0 hero-gradient-overlay z-20"></div>
       
       <!-- Carousel Content Container -->
-      <div class="relative z-20 flex h-full items-center px-6 py-16 md:px-12 lg:px-20" :style="{ minHeight: minHeight }">
+      <div class="relative z-30 flex h-full items-center px-6 py-16 md:px-12 lg:px-20" :style="{ minHeight: minHeight }">
         <transition name="slide-fade" mode="out-in">
           <div :key="activeSlideIndex" class="max-w-3xl text-left my-auto">
             <span v-if="computedSlides[activeSlideIndex].tag" class="inline-flex items-center gap-2 font-display font-semibold text-secondary text-sm tracking-wider uppercase mb-3">
@@ -76,7 +83,7 @@
       </div>
 
       <!-- Navigation Arrows (only if multiple slides exist) -->
-      <div v-if="computedSlides.length > 1" class="absolute inset-y-0 left-0 right-0 z-30 flex items-center justify-between px-4 pointer-events-none md:px-6">
+      <div v-if="computedSlides.length > 1" class="absolute inset-y-0 left-0 right-0 z-40 flex items-center justify-between px-4 pointer-events-none md:px-6">
         <button 
           @click="prevSlide" 
           class="pointer-events-auto flex items-center justify-center h-12 w-12 rounded-full border border-white/10 bg-white/5 text-white/70 hover:text-white hover:bg-white/10 hover:border-white/20 backdrop-blur-sm shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
@@ -94,7 +101,7 @@
       </div>
 
       <!-- Navigation Dots (only if multiple slides exist) -->
-      <div v-if="computedSlides.length > 1" class="absolute bottom-6 left-0 right-0 z-30 flex justify-center gap-2">
+      <div v-if="computedSlides.length > 1" class="absolute bottom-6 left-0 right-0 z-40 flex justify-center gap-2">
         <button 
           v-for="(_, index) in computedSlides" 
           :key="index"
