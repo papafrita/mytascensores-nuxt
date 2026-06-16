@@ -251,7 +251,7 @@
             <NuxtLink to="/#contacto" class="inline-flex items-center gap-2 rounded-xl bg-tertiary hover:bg-tertiary-dark text-white font-bold px-7 py-4 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-tertiary/15 text-sm md:text-base">
               Solicitar cotización técnica <ArrowUpRight class="h-5 w-5" />
             </NuxtLink>
-            <a href="tel:+56967579214" class="inline-flex items-center justify-center rounded-xl border border-white/60 hover:bg-white hover:text-navy px-7 py-4 font-semibold text-white transition-all transform hover:-translate-y-0.5 text-sm md:text-base">
+            <a href="tel:+56323536728" class="inline-flex items-center justify-center rounded-xl border border-white/60 hover:bg-white hover:text-navy px-7 py-4 font-semibold text-white transition-all transform hover:-translate-y-0.5 text-sm md:text-base">
               Llamar a Ventas
             </a>
           </div>

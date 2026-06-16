@@ -15,7 +15,7 @@
             Presencia estratégica en <span class="text-cyan">todo el país</span>
           </h2>
           <p class="mt-4 text-base text-white/80 leading-relaxed">
-            Nuestra red de mantenimiento e instalaciones cuenta con más de 500 equipos activos distribuidos a lo largo del territorio nacional.
+            Nuestra red de mantenimiento e instalaciones cuenta con más de 150 instalaciones distribuidas a lo largo del territorio nacional.
           </p>
         </div>
 
@@ -43,7 +43,7 @@
                   @mouseleave="handleMouseLeave"
                   @click="handleRegionClick(region)"
                 >
-                  <title>{{ region.name }} - {{ region.projects }} Proyectos</title>
+                  <title>{{ region.name }} - {{ region.projects }} {{ region.projects === 1 ? 'Instalación' : 'Instalaciones' }}</title>
                 </path>
               </g>
             </svg>
@@ -59,7 +59,7 @@
             </h4>
             <div class="flex items-center gap-1.5 font-bold text-xs text-secondary-dark bg-secondary/5 px-2.5 py-1 rounded-xl w-max">
               <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
-              <span>{{ tooltipContent.projects }} equipos</span>
+              <span>{{ tooltipContent.projects }} {{ tooltipContent.projects === 1 ? 'instalación' : 'instalaciones' }}</span>
             </div>
           </div>
         </div>

@@ -9,9 +9,19 @@
           <NuxtLink to="/" class="inline-block flex-shrink-0">
             <img src="/images/logo-blanco.png" alt="MYT Ascensores" width="248" height="157" loading="lazy" decoding="async" class="h-[86px] md:h-[130px] w-auto object-contain" />
           </NuxtLink>
-          <p class="max-w-md text-slate-400 leading-relaxed font-light text-xs md:text-sm md:border-l md:border-white/10 md:pl-6">
-            Empresa especializada en mantención, reparación e instalación de ascensores en Chile. Servicio técnico certificado MINVU.
-          </p>
+          <div class="max-w-md md:border-l md:border-white/10 md:pl-6">
+            <p class="text-slate-400 leading-relaxed font-light text-xs md:text-sm">
+              Empresa especializada en mantención, reparación e instalación de ascensores en Chile. Servicio técnico certificado MINVU.
+            </p>
+            <div class="mt-3 flex items-center gap-2 text-xs md:text-sm">
+              <AlertTriangle class="h-4 w-4 text-red-400 animate-pulse" />
+              <span class="text-slate-400 font-semibold">Emergencias:</span>
+              <a href="tel:+56931831327" class="inline-flex items-center gap-1.5 text-secondary hover:text-white transition-colors font-bold">
+                <Phone class="h-4 w-4 text-red-400" />
+                +56 9 3183 1327
+              </a>
+            </div>
+          </div>
         </div>
         <nav aria-label="Enlaces del sitio" class="flex flex-wrap gap-x-5 gap-y-2 text-slate-400 font-semibold text-xs md:text-sm lg:flex-nowrap whitespace-nowrap">
           <NuxtLink class="hover:text-secondary transition-colors" to="/">Inicio</NuxtLink>
@@ -42,5 +52,6 @@
 </template>
 
 <script setup lang="ts">
+import { Phone, AlertTriangle } from 'lucide-vue-next'
 // Main website footer component
 </script>

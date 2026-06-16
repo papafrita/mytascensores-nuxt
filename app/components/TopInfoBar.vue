@@ -2,15 +2,15 @@
   <div class="bg-primary text-white border-b border-white/5 relative z-50">
     <div class="mx-auto flex max-w-7xl flex-col sm:flex-row items-center justify-between gap-3 px-6 py-4 text-xs md:text-sm lg:px-8">
       <div class="flex flex-wrap justify-center sm:justify-start items-center gap-x-7 gap-y-2">
-        <a class="inline-flex items-center gap-2 hover:text-secondary transition-colors" href="tel:+56967579214">
+        <a class="inline-flex items-center gap-2 hover:text-secondary transition-colors" href="tel:+56323536728">
           <strong class="text-white font-bold">Ventas:</strong>
           <Phone class="h-4 w-4 text-secondary" />
-          <span class="font-semibold">+56 9 6757 9214</span>
+          <span class="font-semibold">+56 32 353 6728</span>
         </a>
-        <a class="inline-flex items-center gap-2 hover:text-secondary transition-colors" href="tel:+56931831327">
-          <strong class="text-white font-bold">Emergencias:</strong>
-          <Phone class="h-4 w-4 text-red-400 animate-pulse" />
-          <span class="font-semibold">+56 9 3183 1327</span>
+        <a class="inline-flex items-center gap-2 hover:text-secondary transition-colors" href="mailto:contacto@mytascensores.cl">
+          <strong class="text-white font-bold">Contacto:</strong>
+          <Mail class="h-4 w-4 text-secondary" />
+          <span class="font-semibold">contacto@mytascensores.cl</span>
         </a>
         <span class="inline-flex items-center gap-2 text-white/90">
           <MapPin class="h-4 w-4 text-secondary" />
@@ -35,5 +35,5 @@
 </template>
 
 <script setup lang="ts">
-import { Phone, MapPin } from 'lucide-vue-next'
+import { Phone, MapPin, Mail } from 'lucide-vue-next'
 </script>

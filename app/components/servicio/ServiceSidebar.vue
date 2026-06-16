@@ -163,6 +163,18 @@ function handleSubmit() {
           </div>
         </a>
         <a
+          href="tel:+56323536728"
+          class="flex items-center gap-3 rounded-xl bg-white/5 hover:bg-white/10 p-4 transition-all duration-200 border border-white/5 group/item"
+        >
+          <span class="p-2 rounded-lg bg-secondary/20 text-secondary group-hover/item:scale-105 transition-transform">
+            <Headphones class="h-5 w-5" />
+          </span>
+          <div>
+            <span class="block text-[10px] uppercase font-bold text-slate-300 tracking-wider">Ventas (Central)</span>
+            <span class="block text-sm font-bold tracking-tight">+56 32 353 6728</span>
+          </div>
+        </a>
+        <a
           href="tel:+56967579214"
           class="flex items-center gap-3 rounded-xl bg-white/5 hover:bg-white/10 p-4 transition-all duration-200 border border-white/5 group/item"
         >
@@ -170,7 +182,7 @@ function handleSubmit() {
             <Headphones class="h-5 w-5" />
           </span>
           <div>
-            <span class="block text-[10px] uppercase font-bold text-slate-300 tracking-wider">Área Ventas y Cotización</span>
+            <span class="block text-[10px] uppercase font-bold text-slate-300 tracking-wider">Ventas (Móvil)</span>
             <span class="block text-sm font-bold tracking-tight">+56 9 6757 9214</span>
           </div>
         </a>
