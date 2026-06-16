@@ -22,10 +22,9 @@ const props = defineProps<{
 
 // Icon mapping for sidebar navigation
 const serviceIcons: Record<string, ReturnType<typeof ClipboardCheck>> = {
-  mantenimiento: ClipboardCheck,
+  correctivo: ClipboardList,
   reparacion: Cog,
-  importacion: Download,
-  correctivo: ClipboardList
+  importacion: Download
 }
 
 // Service navigation items
@@ -51,17 +50,15 @@ const showSuccess = ref(false)
 
 // Pre-select the form service based on current service
 const serviceOptions = [
-  { value: 'Mantenimiento Multimarca', label: 'Mantenimiento Multimarca' },
+  { value: 'Mantenimiento Correctivo', label: 'Mantenimiento Correctivo' },
   { value: 'Reparación y Normalización', label: 'Reparación y Normalización' },
-  { value: 'Importación e Instalación', label: 'Importación e Instalación' },
-  { value: 'Mantenimiento Correctivo', label: 'Mantenimiento Correctivo' }
+  { value: 'Importación e Instalación', label: 'Importación e Instalación' }
 ]
 
 const serviceValueMap: Record<string, string> = {
-  mantenimiento: 'Mantenimiento Multimarca',
+  correctivo: 'Mantenimiento Correctivo',
   reparacion: 'Reparación y Normalización',
-  importacion: 'Importación e Instalación',
-  correctivo: 'Mantenimiento Correctivo'
+  importacion: 'Importación e Instalación'
 }
 
 // Set form service when current service changes

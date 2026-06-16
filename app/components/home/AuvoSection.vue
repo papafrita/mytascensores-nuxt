@@ -455,21 +455,7 @@
             </div>
           </div>
 
-          <div class="pt-4 flex flex-wrap gap-4 items-center">
-            <a 
-              href="https://www.auvo.com/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="inline-flex items-center gap-2 text-sm font-bold text-cyan hover:text-cyan-light transition-colors group"
-            >
-              Visitar sitio oficial de AUVO
-              <ExternalLink class="h-4.5 w-4.5 transform group-hover:translate-x-0.5 transition-transform" />
-            </a>
-            <span class="text-white/10 hidden sm:inline">•</span>
-            <p class="text-xs text-slate-400 font-light">
-              *Trazabilidad disponible en todos nuestros planes de mantención mensual.
-            </p>
-          </div>
+
         </div>
 
       </div>
@@ -480,7 +466,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { 
-  ExternalLink, 
   MapPin, 
   ClipboardCheck, 
   Camera, 

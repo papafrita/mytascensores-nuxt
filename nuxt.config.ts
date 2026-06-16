@@ -17,20 +17,18 @@ export default defineNuxtConfig({
 
   sitemap: {
     urls: [
-      { loc: '/servicios/mantenimiento', changefreq: 'monthly', priority: 0.8 },
+      { loc: '/servicios/correctivo', changefreq: 'monthly', priority: 0.8 },
       { loc: '/servicios/reparacion', changefreq: 'monthly', priority: 0.8 },
-      { loc: '/servicios/importacion', changefreq: 'monthly', priority: 0.8 },
-      { loc: '/servicios/correctivo', changefreq: 'monthly', priority: 0.8 }
+      { loc: '/servicios/importacion', changefreq: 'monthly', priority: 0.8 }
     ]
   },
 
   nitro: {
     prerender: {
       routes: [
-        '/servicios/mantenimiento',
+        '/servicios/correctivo',
         '/servicios/reparacion',
-        '/servicios/importacion',
-        '/servicios/correctivo'
+        '/servicios/importacion'
       ],
       autoSubfolderIndex: false
     }

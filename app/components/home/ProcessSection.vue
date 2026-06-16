@@ -102,7 +102,7 @@ const steps = [
   {
     phase: 'Paso 1',
     title: 'Evaluamos la necesidad',
-    desc: 'Realizamos un diagnóstico integral del estado de tus equipos y/o analizamos tus planos en obra.',
+    desc: 'Realizamos un diagnóstico integral del estado de tus equipos.',
     icon: markRaw(FileSearch)
   },
   {

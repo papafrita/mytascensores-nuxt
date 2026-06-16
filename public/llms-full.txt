@@ -16,11 +16,11 @@ Ser la empresa referente en Chile en servicios de transporte vertical, reconocid
 
 ## Servicios
 
-### Mantenimiento Multimarca
+### Mantenimiento Correctivo
 
-Servicio de mantención preventiva y correctiva para ascensores de todas las marcas presentes en el mercado chileno. Nuestro programa de mantenimiento incluye más de 50 puntos de control en cada visita, abarcando inspección mecánica, eléctrica y electrónica. Realizamos lubricación de componentes, limpieza de foso y sala de máquinas, verificación de sistemas de seguridad y ajuste de puertas. Cada intervención queda registrada digitalmente en el software AUVO, generando reportes detallados con fotografías y firmas electrónicas que garantizan trazabilidad completa.
+Servicio de atención de emergencias disponible las 24 horas del día, los 7 días de la semana, los 365 días del año. Nuestro equipo de técnicos especializados está preparado para responder ante cualquier situación de emergencia, incluyendo personas atrapadas, fallas críticas de seguridad y detenciones inesperadas. Contamos con tiempos de respuesta optimizados y un stock de repuestos que nos permite resolver la mayoría de las emergencias en la primera visita.
 
-Marcas que mantenemos: Schindler, Otis, thyssenkrupp, Mitsubishi, KONE, y todas las demás marcas del mercado.
+Línea de emergencias: +56 9 3183 1327
 
 ### Reparación y Normalización
 
@@ -29,12 +29,6 @@ Servicio especializado en la reparación de fallas y la adecuación de ascensore
 ### Importación e Instalación
 
 Importamos e instalamos ascensores nuevos directamente desde fábricas certificadas, ofreciendo equipos de última generación con tecnología de punta. Nuestro servicio abarca desde el diseño y planificación del proyecto hasta la instalación completa, puesta en marcha y certificación ante el MINVU. Trabajamos con ascensores para edificios residenciales, comerciales e industriales, adaptándonos a las necesidades específicas de cada proyecto.
-
-### Mantenimiento Correctivo 24/7
-
-Servicio de atención de emergencias disponible las 24 horas del día, los 7 días de la semana, los 365 días del año. Nuestro equipo de técnicos especializados está preparado para responder ante cualquier situación de emergencia, incluyendo personas atrapadas, fallas críticas de seguridad y detenciones inesperadas. Contamos con tiempos de respuesta optimizados y un stock de repuestos que nos permite resolver la mayoría de las emergencias en la primera visita.
-
-Línea de emergencias: +56 9 3183 1327
 
 ## Preguntas Frecuentes
 
@@ -96,8 +90,7 @@ MYT Ascensores utiliza el software **AUVO** para la gestión y trazabilidad digi
 - [Inicio](https://mytascensores.cl/)
 - [Nosotros](https://mytascensores.cl/nosotros)
 - [Servicios](https://mytascensores.cl/#servicios)
-- [Mantenimiento Multimarca](https://mytascensores.cl/servicios/mantenimiento)
+- [Mantenimiento Correctivo](https://mytascensores.cl/servicios/correctivo)
 - [Reparación y Normalización](https://mytascensores.cl/servicios/reparacion)
 - [Importación e Instalación](https://mytascensores.cl/servicios/importacion)
-- [Mantenimiento Correctivo 24/7](https://mytascensores.cl/servicios/correctivo)
 - [Contacto](https://mytascensores.cl/#contacto)

@@ -19,9 +19,9 @@
       </div>
 
       <!-- Main Layout -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <!-- Service Tabs (2x2 Grid) -->
-        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <!-- Service Tabs (Vertical list on large screens, 3-column grid on tablet) -->
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
           <button
             v-for="(service, key) in servicesData"
             :key="key"
@@ -72,7 +72,7 @@
         </div>
 
         <!-- Detail Card -->
-        <div class="lg:col-span-5">
+        <div class="lg:col-span-7">
           <div class="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-premium text-ink flex flex-col h-full min-h-[460px] relative">
             <Transition name="fade" mode="out-in">
               <div :key="activeServiceKey" class="flex flex-col h-full flex-grow">
@@ -163,7 +163,7 @@ import {
 } from 'lucide-vue-next'
 
 const { servicesData } = useServicesData()
-const activeServiceKey = ref<keyof typeof servicesData>('mantenimiento')
+const activeServiceKey = ref<keyof typeof servicesData>('correctivo')
 
 const activeService = computed(() => servicesData[activeServiceKey.value])
 

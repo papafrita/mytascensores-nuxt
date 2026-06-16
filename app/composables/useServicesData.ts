@@ -30,42 +30,42 @@ export interface ServiceData {
   metric: ServiceMetric
 }
 
-export type ServiceId = 'mantenimiento' | 'reparacion' | 'importacion' | 'correctivo'
+export type ServiceId = 'correctivo' | 'reparacion' | 'importacion'
 
 export const useServicesData = () => {
   const servicesData: Record<ServiceId, ServiceData> = {
-    mantenimiento: {
-      category: 'Servicio Preventivo',
-      title: 'Mantenimiento Multimarca',
-      seoTitle: 'Mantenimiento Multimarca de Ascensores | MYT',
-      meta: 'Servicio preventivo mensual certificado para asegurar la máxima disponibilidad, suavidad y seguridad de sus equipos de transporte vertical.',
-      icon: 'clipboard-check',
-      image: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM.jpeg',
-      description: 'Son aquellas intervenciones que requieren alto conocimiento técnico, respetando los procedimientos y protocolos del fabricante, según marca y modelo, realizadas mensualmente según la normativa vigente.',
-      overview: 'Nuestro servicio de Mantenimiento Multimarca está diseñado bajo rigurosos estándares internacionales y en estricta conformidad con la normativa legal chilena (Ley 20.296). Realizamos visitas mensuales preventivas programadas, donde ingenieros y técnicos altamente calificados inspeccionan, limpian, lubrican y ajustan más de 50 puntos críticos de control en la cabina, sala de máquinas, pozo y escotilla de los ascensores.<br><br>Nos adaptamos a las particularidades técnicas de cada fabricante (Schindler, Otis, TK Elevator, Mitsubishi, KONE, entre otras), asegurando el uso de repuestos genuinos y prolongando significativamente la vida útil de sus equipos, mientras reducimos las fallas operacionales imprevistas hasta en un 85%.',
+    correctivo: {
+      category: 'Servicio Correctivo 24/7',
+      title: 'Mantenimiento Correctivo',
+      seoTitle: 'Servicio de Emergencias 24/7 | MYT Ascensores',
+      meta: 'Asistencia inmediata 24/7 para el rescate rápido de pasajeros, bloqueos y fallas operacionales críticas con técnicos de turno.',
+      icon: 'clipboard-list',
+      image: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (3).jpeg',
+      description: 'Atendemos requerimientos puntuales y llamadas de emergencias técnicas las 24 horas del día para resolver interrupciones, ajustar componentes y mantener los equipos disponibles.',
+      overview: 'Las interrupciones en el servicio de transporte vertical causan graves inconvenientes en comunidades residenciales, oficinas y recintos de salud. Nuestro Mantenimiento Correctivo y Servicio de Emergencias 24/7 está diseñado para devolver sus ascensores a la operación segura en tiempo récord.<br><br>Contamos con un centro de despacho telefónico permanente y cuadrillas de técnicos de turno equipados con vehículos de respuesta rápida y stock crítico de repuestos multimarca. Priorizamos de forma absoluta los rescates de pasajeros atrapados y los bloqueos totales del equipo, aplicando protocolos de seguridad estandarizados para mitigar cualquier riesgo físico.',
       features: [
-        'Mantención preventiva mensual',
-        'Servicio multimarca experto',
-        'Atención profesional de alta calidad'
+        'Atención técnica 24/7/365',
+        'Rescate y ajustes express',
+        'Disponibilidad operacional garantizada'
       ],
       detailedFeatures: [
-        { title: 'Inspección de 50+ Puntos Críticos', desc: 'Verificación minuciosa de sistemas de freno, limitadores de velocidad, paracaídas de seguridad y switches de límite eléctrico.' },
-        { title: 'Lubricación y Ajuste de Precisión', desc: 'Aplicación de lubricantes especializados en rieles guía, poleas deflectoras, cables de tracción y operadores de puerta para viajes silenciosos.' },
-        { title: 'Limpieza Técnica de Fosa y Escotilla', desc: 'Eliminación exhaustiva de residuos inflamables y grasas acumuladas en el pozo del ascensor para prevenir fallas operativas.' },
-        { title: 'Reporte Técnico con Trazabilidad', desc: 'Emisión digital de un informe detallado posterior a cada mantención con firmas y registro fotográfico en el sistema AUVO.' }
+        { title: 'Respuesta Rápida Telefónica y Despacho 24/7', desc: 'Canal de emergencias exclusivo operativo las 24 horas del día, los 365 días del año, incluyendo fines de semana y festivos.' },
+        { title: 'Técnicos Expertos de Guardia Permanente', desc: 'Personal capacitado en rescate y diagnóstico multimarca listo para movilizarse en cualquier comuna de la Región Metropolitana.' },
+        { title: 'Protocolo Estandarizado de Rescate', desc: 'Procedimientos certificados para la liberación controlada de pasajeros en cabina, priorizando la calma y la seguridad total.' },
+        { title: 'Repuestos Críticos a Bordo', desc: 'Móviles provistos con stock crítico (contactores, patines de puerta, sensores de pozo) para solucionar fallas en la primera visita.' }
       ],
       steps: [
-        { phase: 'Paso 1', title: 'Planificación y Notificación', desc: 'Coordinamos mensualmente el calendario de visitas y enviamos notificaciones automatizadas a la administración del edificio.' },
-        { phase: 'Paso 2', title: 'Inspección en Terreno', desc: 'Técnicos autorizados por el MINVU ejecutan la pauta técnica mensual revisando componentes eléctricos, mecánicos y de cabina.' },
-        { phase: 'Paso 3', title: 'Ajuste Dinámico y Pruebas', desc: 'Calibramos la nivelación de parada, velocidad de apertura de puertas y la suavidad de aceleración/desaceleración.' },
-        { phase: 'Paso 4', title: 'Emisión de Ficha en AUVO', desc: 'El informe técnico digital se firma y se sube automáticamente a la plataforma para el seguimiento histórico transparente de la comunidad.' }
+        { phase: 'Paso 1', title: 'Recepción del Incidente', desc: 'Registramos la llamada al +56 9 3183 1327 y clasificamos la urgencia (atrapados o falla de bloqueo de cabina).' },
+        { phase: 'Paso 2', title: 'Despacho de Cuadrilla Técnica', desc: 'Asignamos al móvil de turno más cercano al edificio utilizando nuestro sistema de posicionamiento georreferenciado.' },
+        { phase: 'Paso 3', title: 'Maniobra de Rescate y Seguridad', desc: 'Al llegar, el técnico estabiliza el equipo en la zona de desembarque y procede a evacuar de forma segura a los pasajeros.' },
+        { phase: 'Paso 4', title: 'Diagnóstico Técnico y Reparación', desc: 'Una vez evacuados, diagnosticamos el origen del bloqueo y reparamos el componente para dejar el ascensor operable.' }
       ],
       metrics: [
-        { num: '+450', lbl: 'Equipos' },
-        { num: '+600', lbl: 'Servicios' },
-        { num: '100%', lbl: 'Garantía' }
+        { num: '24h', lbl: 'Rescate' },
+        { num: 'Rápido', lbl: 'Arribo' },
+        { num: 'Experto', lbl: 'Soporte' }
       ],
-      metric: { num: '+450', lbl: 'Equipos Activos Mantenidos' }
+      metric: { num: '24 / 7', lbl: 'Disponibilidad de Respuesta' }
     },
     reparacion: {
       category: 'Servicio Correctivo',
@@ -132,39 +132,6 @@ export const useServicesData = () => {
         { num: 'ISO', lbl: 'Calidad' }
       ],
       metric: { num: '+50', lbl: 'Edificios Nuevos Habilitados' }
-    },
-    correctivo: {
-      category: 'Servicio Correctivo 24/7',
-      title: 'Mantenimiento Correctivo',
-      seoTitle: 'Servicio de Emergencias 24/7 | MYT Ascensores',
-      meta: 'Asistencia inmediata 24/7 para el rescate rápido de pasajeros, bloqueos y fallas operacionales críticas con técnicos de turno.',
-      icon: 'clipboard-list',
-      image: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (3).jpeg',
-      description: 'Atendemos requerimientos puntuales y llamadas de emergencias técnicas las 24 horas del día para resolver interrupciones, ajustar componentes y mantener los equipos disponibles.',
-      overview: 'Las interrupciones en el servicio de transporte vertical causan graves inconvenientes en comunidades residenciales, oficinas y recintos de salud. Nuestro Mantenimiento Correctivo y Servicio de Emergencias 24/7 está diseñado para devolver sus ascensores a la operación segura en tiempo récord.<br><br>Contamos con un centro de despacho telefónico permanente y cuadrillas de técnicos de turno equipados con vehículos de respuesta rápida y stock crítico de repuestos multimarca. Priorizamos de forma absoluta los rescates de pasajeros atrapados y los bloqueos totales del equipo, aplicando protocolos de seguridad estandarizados para mitigar cualquier riesgo físico.',
-      features: [
-        'Atención técnica 24/7/365',
-        'Rescate y ajustes express',
-        'Disponibilidad operacional garantizada'
-      ],
-      detailedFeatures: [
-        { title: 'Respuesta Rápida Telefónica y Despacho 24/7', desc: 'Canal de emergencias exclusivo operativo las 24 horas del día, los 365 días del año, incluyendo fines de semana y festivos.' },
-        { title: 'Técnicos Expertos de Guardia Permanente', desc: 'Personal capacitado en rescate y diagnóstico multimarca listo para movilizarse en cualquier comuna de la Región Metropolitana.' },
-        { title: 'Protocolo Estandarizado de Rescate', desc: 'Procedimientos certificados para la liberación controlada de pasajeros en cabina, priorizando la calma y la seguridad total.' },
-        { title: 'Repuestos Críticos a Bordo', desc: 'Móviles provistos con stock crítico (contactores, patines de puerta, sensores de pozo) para solucionar fallas en la primera visita.' }
-      ],
-      steps: [
-        { phase: 'Paso 1', title: 'Recepción del Incidente', desc: 'Registramos la llamada al +56 9 3183 1327 y clasificamos la urgencia (atrapados o falla de bloqueo de cabina).' },
-        { phase: 'Paso 2', title: 'Despacho de Cuadrilla Técnica', desc: 'Asignamos al móvil de turno más cercano al edificio utilizando nuestro sistema de posicionamiento georreferenciado.' },
-        { phase: 'Paso 3', title: 'Maniobra de Rescate y Seguridad', desc: 'Al llegar, el técnico estabiliza el equipo en la zona de desembarque y procede a evacuar de forma segura a los pasajeros.' },
-        { phase: 'Paso 4', title: 'Diagnóstico Técnico y Reparación', desc: 'Una vez evacuados, diagnosticamos el origen del bloqueo y reparamos el componente para dejar el ascensor operable.' }
-      ],
-      metrics: [
-        { num: '24h', lbl: 'Rescate' },
-        { num: 'Rápido', lbl: 'Arribo' },
-        { num: 'Experto', lbl: 'Soporte' }
-      ],
-      metric: { num: '24 / 7', lbl: 'Disponibilidad de Respuesta' }
     }
   }
 

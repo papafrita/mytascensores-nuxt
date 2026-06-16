@@ -15,6 +15,9 @@
     <!-- Contact Section -->
     <ContactSection />
 
+    <!-- Map Section -->
+    <MapSection />
+
     <!-- Process Section -->
     <ProcessSection />
 
@@ -32,7 +35,7 @@
             Compromiso <span class="text-cyan">visual</span> con la calidad
           </h2>
           <p class="mt-4 text-base text-slate-600">
-            Registro fotográfico real de nuestras inspecciones técnicas, modernizaciones mecánicas y visitas de mantenimiento preventivo mensual.
+            Registro fotográfico real de nuestras inspecciones técnicas, modernizaciones y visitas de mantenimiento preventivo mensual.
           </p>
         </div>
         
@@ -68,6 +71,7 @@ import GallerySlider from '../components/home/GallerySlider.vue'
 import BrandsSection from '../components/home/BrandsSection.vue'
 import FaqSection from '../components/home/FaqSection.vue'
 import ContactSection from '../components/home/ContactSection.vue'
+import MapSection from '../components/home/MapSection.vue'
 import LightboxModal from '../components/home/LightboxModal.vue'
 
 const heroSlides = [
@@ -170,7 +174,7 @@ useHead({
             name: '¿Qué tipos de ascensores mantienen?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Somos una empresa multimarca que realiza pautas de mantenimiento técnico predictivo y preventivo para ascensores de pasajeros, montacargas, escaleras mecánicas y rampas de todas las marcas del mercado, incluyendo Schindler, Otis, thyssenkrupp, Mitsubishi, KONE, entre otras.'
+              text: 'Somos una empresa multimarca que realiza pautas de mantenimiento técnico preventivo y correctivo para ascensores de pasajeros, montacargas, escaleras mecánicas y rampas de todas las marcas del mercado, incluyendo Schindler, Otis, thyssenkrupp, Mitsubishi, KONE, entre otras.'
             }
           },
           {
@@ -186,7 +190,7 @@ useHead({
             name: '¿Ofrecen atención de emergencias?',
             acceptedAnswer: {
               '@type': 'Answer',
-              text: 'Contamos con un servicio de emergencias permanente las 24 horas del día, los 365 días del año. Ante fallas críticas o personas atrapadas en cabina, despachamos de inmediato cuadrillas técnicas altamente especializadas.'
+              text: 'Sí, nuestro servicio técnico está preparado para atender contingencias y emergencias de forma rápida y oportuna.'
             }
           },
           {

@@ -2,14 +2,13 @@
 
 > Expertos en mantención, reparación e instalación de ascensores en Chile.
 
-MYT Ascensores es una empresa chilena especializada en el mantenimiento multimarca, reparación, normalización e instalación de ascensores y equipos de transporte vertical. Certificados por el MINVU (Rol N°256, Resolución N°1452), garantizamos seguridad, cumplimiento normativo y trazabilidad digital en cada servicio.
+MYT Ascensores es una empresa chilena especializada en el mantenimiento correctivo, reparación, normalización e instalación de ascensores y equipos de transporte vertical. Certificados por el MINVU (Rol N°256, Resolución N°1452), garantizamos seguridad, cumplimiento normativo y trazabilidad digital en cada servicio.
 
 ## Servicios
 
-- [Mantenimiento Multimarca](https://mytascensores.cl/servicios/mantenimiento): Mantención preventiva mensual certificada para ascensores de todas las marcas.
+- [Mantenimiento Correctivo](https://mytascensores.cl/servicios/correctivo): Atención de emergencias las 24 horas, los 7 días de la semana, todo el año.
 - [Reparación y Normalización](https://mytascensores.cl/servicios/reparacion): Diagnóstico de fallas, reparación y adecuación a normativa vigente del MINVU.
 - [Importación e Instalación](https://mytascensores.cl/servicios/importacion): Importación directa e instalación de ascensores nuevos, proyectos llave en mano.
-- [Mantenimiento Correctivo 24/7](https://mytascensores.cl/servicios/correctivo): Atención de emergencias las 24 horas, los 7 días de la semana, todo el año.
 
 ## Certificaciones
 

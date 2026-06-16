@@ -16,7 +16,7 @@
             Cotiza con <span class="text-cyan">nosotros</span>
           </h2>
           <p class="mt-5 text-base text-slate-600 leading-relaxed">
-            Escríbenos para solicitar una pauta de mantención, programar una visita técnica de evaluación de tus ascensores o normalizar tu instalación ante observaciones del MINVU.
+            Escríbenos para solicitar un presupuesto de mantención, programar una visita técnica de evaluación de tus ascensores o normalizar tu instalación ante observaciones del MINVU.
           </p>
 
           <div class="mt-10 rounded-2xl bg-white border border-slate-100 p-6 md:p-8 shadow-premium">
@@ -24,10 +24,21 @@
               <CircleHelp class="h-7 w-7 text-cyan" /> ¿Prefieres contactarnos directo?
             </h3>
             <p class="mt-4 text-sm text-slate-500 leading-relaxed">
-              Puedes comunicarte con nuestro equipo de ventas o llamar a nuestra línea de emergencias.
+              Puedes comunicarte con nuestro equipo de ventas a través de cualquiera de nuestros números de contacto.
             </p>
             
             <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <a 
+                href="tel:+56967579214" 
+                class="rounded-xl border border-slate-100 hover:border-cyan hover:bg-slate-50 p-4 font-semibold transition hover:-translate-y-0.5 flex flex-col gap-2 shadow-sm text-sm text-navy group"
+              >
+                <Headphones class="h-8 w-8 text-cyan group-hover:scale-110 transition-transform duration-200" />
+                <span>Ventas</span>
+                <span class="mt-1 block text-sm sm:text-base font-bold whitespace-nowrap tracking-tight text-navy">
+                  +56 9 6757 9214
+                </span>
+              </a>
+              
               <a 
                 href="tel:+56323536728" 
                 class="rounded-xl border border-slate-100 hover:border-cyan hover:bg-slate-50 p-4 font-semibold transition hover:-translate-y-0.5 flex flex-col gap-2 shadow-sm text-sm text-navy group"
@@ -36,17 +47,6 @@
                 <span>Ventas</span>
                 <span class="mt-1 block text-sm sm:text-base font-bold whitespace-nowrap tracking-tight text-navy">
                   +56 32 353 6728
-                </span>
-              </a>
-              
-              <a 
-                href="tel:+56931831327" 
-                class="rounded-xl bg-navy p-4 border border-navy/10 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-navy-light flex flex-col gap-2 shadow-md group"
-              >
-                <AlertTriangle class="h-8 w-8 text-red-400 animate-pulse group-hover:scale-110 transition-transform duration-200" />
-                <span>Emergencias</span>
-                <span class="mt-1 block text-sm sm:text-base font-bold whitespace-nowrap tracking-tight text-cyan">
-                  +56 9 3183 1327
                 </span>
               </a>
             </div>
@@ -128,10 +128,9 @@
                   class="w-full bg-surface border border-slate-100 rounded-xl px-4 py-3.5 text-sm text-ink focus:outline-none focus:border-cyan focus:bg-white transition-colors appearance-none"
                   style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2364748b%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><polyline points=%226 9 12 15 18 9%22></polyline></svg>'); background-position: right 1rem center; background-repeat: no-repeat; background-size: 1.2em;"
                 >
-                  <option value="Mantenimiento Multimarca">Mantenimiento Multimarca (Mensual)</option>
+                  <option value="Mantenimiento Correctivo">Mantenimiento Correctivo (Urgente)</option>
                   <option value="Reparación y Normalización">Reparación y Normalización (MINVU)</option>
                   <option value="Importación e Instalación">Importación e Instalación</option>
-                  <option value="Mantenimiento Correctivo">Mantenimiento Correctivo (Urgente)</option>
                   <option value="Otro">Otro requerimiento</option>
                 </select>
               </div>
@@ -179,7 +178,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Mail, CircleHelp, Headphones, AlertTriangle, ArrowUpRight, CheckCircle, AlertCircle } from 'lucide-vue-next'
+import { Mail, CircleHelp, Headphones, ArrowUpRight, CheckCircle, AlertCircle } from 'lucide-vue-next'
 
 const showSuccess = ref(false)
 const showError = ref(false)
@@ -189,7 +188,7 @@ const errorMsg = ref('')
 const form = ref({
   name: '',
   email: '',
-  subject: 'Mantenimiento Multimarca',
+  subject: 'Mantenimiento Correctivo',
   message: ''
 })
 
@@ -211,7 +210,7 @@ const handleSubmit = async () => {
     form.value = {
       name: '',
       email: '',
-      subject: 'Mantenimiento Multimarca',
+      subject: 'Mantenimiento Correctivo',
       message: ''
     }
 

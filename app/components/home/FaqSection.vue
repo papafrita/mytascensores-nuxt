@@ -108,7 +108,7 @@ const toggleFaq = (index: number) => {
 const faqs = [
   {
     question: '¿Qué tipos de ascensores mantienen?',
-    answer: 'Somos una empresa multimarca que realiza pautas de mantenimiento técnico predictivo y preventivo para ascensores de pasajeros, montacargas, escaleras mecánicas y rampas de todas las marcas del mercado, incluyendo Schindler, Otis, thyssenkrupp, Mitsubishi, KONE, entre otras.'
+    answer: 'Somos una empresa multimarca que realiza pautas de mantenimiento técnico preventivo y correctivo para ascensores de pasajeros, montacargas, escaleras mecánicas y rampas de todas las marcas del mercado, incluyendo Schindler, Otis, thyssenkrupp, Mitsubishi, KONE, entre otras.'
   },
   {
     question: '¿Están certificados por el MINVU?',
@@ -116,7 +116,7 @@ const faqs = [
   },
   {
     question: '¿Ofrecen atención de emergencias?',
-    answer: 'Contamos con un servicio de emergencias permanente las 24 horas del día, los 365 días del año. Ante fallas críticas o personas atrapadas en cabina, despachamos de inmediato cuadrillas técnicas altamente especializadas.'
+    answer: 'Sí, nuestro servicio técnico está preparado para atender contingencias y emergencias de forma rápida y oportuna.'
   },
   {
     question: '¿Cómo puedo solicitar una cotización?',

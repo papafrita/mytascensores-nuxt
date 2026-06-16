@@ -59,7 +59,7 @@ const { servicesData } = useServicesData()
 
 const serviceId = computed(() => {
   const id = route.params.id as string
-  return id in servicesData ? id : 'mantenimiento'
+  return id in servicesData ? id : 'correctivo'
 })
 
 const service = computed(() => {
