@@ -82,6 +82,7 @@ const heroSlides = [
     backgroundImage: '/images/hero-ascensores.webp',
     badges: [
       'Registro MINVU Certificado',
+      'Certificación ISO 9001',
       'Software de Gestión AUVO',
       'Soporte de Emergencia 24/7'
     ],
@@ -224,13 +225,13 @@ const openLightbox = (index: number) => {
 }
 
 const galleryImages = [
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM.jpeg', title: 'Inspección Técnica de Cabina y Sistemas' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (1).jpeg', title: 'Mantenimiento Preventivo de Poleas y Tracción' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (2).jpeg', title: 'Modernización de Equipos y Tableros de Control' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (3).jpeg', title: 'Servicio Técnico Especializado Multimarca' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (4).jpeg', title: 'Instalación y Ajuste de Sistemas de Seguridad' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.41 PM.jpeg', title: 'Inspección de Motores y Limitadores de Velocidad' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.41 PM (1).jpeg', title: 'Calibración de Sensores e Indicadores Digitales' },
-  { src: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.41 PM (2).jpeg', title: 'Control de Calidad y Entrega de Proyectos' }
+  { src: '/images/gallery/inspeccion-cabina-ascensor.jpeg', title: 'Inspección Técnica de Cabina y Sistemas' },
+  { src: '/images/gallery/mantencion-poleas-traccion.jpeg', title: 'Mantenimiento Preventivo de Poleas y Tracción' },
+  { src: '/images/gallery/modernizacion-tableros-control.jpeg', title: 'Modernización de Equipos y Tableros de Control' },
+  { src: '/images/gallery/servicio-tecnico-multimarca.jpeg', title: 'Servicio Técnico Especializado Multimarca' },
+  { src: '/images/gallery/instalacion-sistemas-seguridad.jpeg', title: 'Instalación y Ajuste de Sistemas de Seguridad' },
+  { src: '/images/gallery/inspeccion-motores-limitadores.jpeg', title: 'Inspección de Motores y Limitadores de Velocidad' },
+  { src: '/images/gallery/calibracion-sensores-digitales.jpeg', title: 'Calibración de Sensores e Indicadores Digitales' },
+  { src: '/images/gallery/control-calidad-entrega.jpeg', title: 'Control de Calidad y Entrega de Proyectos' }
 ]
 </script>

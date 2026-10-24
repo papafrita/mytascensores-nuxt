@@ -40,13 +40,13 @@
               </a>
               
               <a 
-                href="tel:+56323536728" 
+                href="tel:+56222060170" 
                 class="rounded-xl border border-slate-100 hover:border-cyan hover:bg-slate-50 p-4 font-semibold transition hover:-translate-y-0.5 flex flex-col gap-2 shadow-sm text-sm text-navy group"
               >
                 <Headphones class="h-8 w-8 text-cyan group-hover:scale-110 transition-transform duration-200" />
                 <span>Ventas</span>
                 <span class="mt-1 block text-sm sm:text-base font-bold whitespace-nowrap tracking-tight text-navy">
-                  +56 32 353 6728
+                  +56 2 2206 0170
                 </span>
               </a>
             </div>
@@ -125,7 +125,7 @@
                 <select 
                   id="formSubject" 
                   v-model="form.subject"
-                  class="w-full bg-surface border border-slate-100 rounded-xl px-4 py-3.5 text-sm text-ink focus:outline-none focus:border-cyan focus:bg-white transition-colors appearance-none"
+                  class="w-full max-w-full bg-surface border border-slate-100 rounded-xl pl-4 pr-10 py-3.5 text-sm text-ink focus:outline-none focus:border-cyan focus:bg-white transition-colors appearance-none"
                   style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2224%22 height=%2224%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2364748b%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><polyline points=%226 9 12 15 18 9%22></polyline></svg>'); background-position: right 1rem center; background-repeat: no-repeat; background-size: 1.2em;"
                 >
                   <option value="Mantenimiento Correctivo">Mantenimiento Correctivo (Urgente)</option>
@@ -199,7 +199,9 @@ const handleSubmit = async () => {
   errorMsg.value = ''
 
   try {
-    await $fetch('/api/contact', {
+    const { contactEndpoint } = useRuntimeConfig().public
+    const endpoint = import.meta.dev ? '/api/contact' : (contactEndpoint || '/api/contact')
+    await $fetch(endpoint, {
       method: 'POST',
       body: form.value
     })

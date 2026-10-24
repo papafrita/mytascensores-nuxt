@@ -1,0 +1,13 @@
+name = "myt-contact"
+main = "src/index.js"
+compatibility_date = "2025-07-15"
+
+# Non-secret configuration. Edit as needed.
+[vars]
+CONTACT_FROM_NAME = "MYT Ascensores"
+CONTACT_FROM_EMAIL = "contacto@mytascensores.cl"
+CONTACT_TO_EMAIL = "contacto@mytascensores.cl"
+CONTACT_ALLOWED_ORIGINS = "https://mytascensores.cl,https://www.mytascensores.cl"
+
+# Secret — do NOT put it here. Set it via the CLI:
+#   npx wrangler secret put RESEND_API_KEY

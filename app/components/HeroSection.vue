@@ -1,7 +1,7 @@
 <template>
   <section class="mx-auto max-w-7xl px-6 pt-8 pb-16 lg:px-8">
     <div 
-      class="relative rounded-xl overflow-hidden shadow-premium bg-slate-900" 
+      class="relative z-0 rounded-xl overflow-hidden shadow-premium bg-slate-900" 
       :style="{ minHeight: minHeight }"
       @mouseenter="stopAutoplay"
       @mouseleave="startAutoplay"

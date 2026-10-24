@@ -10,7 +10,7 @@ Key stack:
 
 - Nuxt 4 / Vue 3
 - Tailwind CSS via `@nuxtjs/tailwindcss`
-- Static output generated to `.output/public`
+- Hybrid static and serverless output generated to `dist`
 - Cloudflare Pages deployment via Wrangler
 
 ## Before making changes
@@ -49,7 +49,7 @@ npm run preview
 
 ## Cloudflare Pages setup
 
-This repo deploys the generated static site in `.output/public` to Cloudflare Pages.
+This repo deploys the generated hybrid build in `dist` to Cloudflare Pages.
 
 Wrangler is installed as a project dev dependency, so prefer `npx wrangler` instead of relying on a global install.
 
@@ -68,14 +68,14 @@ CF_PAGES_PROJECT_NAME=<cloudflare-pages-project> make deploy
 The deploy target runs:
 
 ```bash
-npx wrangler pages deploy .output/public --project-name "$CF_PAGES_PROJECT_NAME"
+npx wrangler pages deploy dist --project-name "$CF_PAGES_PROJECT_NAME"
 ```
 
 For Cloudflare Pages Git integration, use:
 
 ```txt
 Build command: npm run build
-Build output directory: .output/public
+Build output directory: dist
 ```
 
 The static fallback for client-side routing is provided by `public/_redirects`.

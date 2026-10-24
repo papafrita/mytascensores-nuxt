@@ -11,7 +11,7 @@
           </NuxtLink>
           <div class="max-w-md md:border-l md:border-white/10 md:pl-6">
             <p class="text-slate-400 leading-relaxed font-light text-xs md:text-sm">
-              Empresa especializada en mantención, reparación e instalación de ascensores en Chile. Servicio técnico certificado MINVU.
+              Empresa especializada en mantención, reparación e instalación de ascensores en Chile. Servicio técnico certificado MINVU e ISO 9001.
             </p>
             <div class="mt-3 flex items-center gap-2 text-xs md:text-sm">
               <AlertTriangle class="h-4 w-4 text-red-400 animate-pulse" />

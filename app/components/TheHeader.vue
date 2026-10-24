@@ -1,8 +1,8 @@
 <template>
-  <header id="mainHeader" :class="['sticky top-0 z-40 transition-all duration-300', isScrolled ? 'glass-nav-scrolled bg-[#f3f6fa] shadow-md' : 'glass-nav bg-[#f3f6fa]/90 backdrop-blur-md']">
-    <nav aria-label="Navegación principal" class="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 lg:px-8">
+  <header id="mainHeader" :class="['relative z-40 transition-all duration-300', isScrolled ? 'glass-nav-scrolled bg-[#f3f6fa] shadow-md' : 'glass-nav bg-[#f3f6fa]/90 backdrop-blur-md']">
+    <nav aria-label="Navegación principal" :class="['mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8 transition-all duration-300', isScrolled ? 'py-1' : 'py-2']">
       <NuxtLink to="/" class="flex items-center gap-3 group">
-        <img src="/images/logo-myt.webp" alt="MYT Ascensores" width="1080" height="633" decoding="async" :class="['object-contain transition-all duration-300', isScrolled ? 'h-14 md:h-20 lg:h-24' : 'h-20 md:h-28 lg:h-32']" />
+        <img src="/images/logo-myt.webp" alt="MYT Ascensores" width="1080" height="633" decoding="async" :class="['object-contain transition-all duration-300', isScrolled ? 'h-14 md:h-14 lg:h-16' : 'h-20 md:h-28 lg:h-32']" />
       </NuxtLink>
       
       <!-- Desktop Navigation Menu -->
@@ -52,12 +52,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { Menu, X, ArrowUpRight } from 'lucide-vue-next'
+import { useScrolled } from '~/composables/useScrolled'
 
 const route = useRoute()
-const isScrolled = ref(false)
+const { isScrolled } = useScrolled()
 const isMenuOpen = ref(false)
 
 const navLinks = [
@@ -73,10 +74,6 @@ const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
 
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50
-}
-
 const isLinkActive = (to: string) => {
   if (to === '/') {
     return route.path === '/' && !route.hash
@@ -86,13 +83,4 @@ const isLinkActive = (to: string) => {
   }
   return route.path === to
 }
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-  handleScroll()
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
 </script>

@@ -163,7 +163,7 @@ function handleSubmit() {
           </div>
         </a>
         <a
-          href="tel:+56323536728"
+          href="tel:+56222060170"
           class="flex items-center gap-3 rounded-xl bg-white/5 hover:bg-white/10 p-4 transition-all duration-200 border border-white/5 group/item"
         >
           <span class="p-2 rounded-lg bg-secondary/20 text-secondary group-hover/item:scale-105 transition-transform">
@@ -171,7 +171,7 @@ function handleSubmit() {
           </span>
           <div>
             <span class="block text-[10px] uppercase font-bold text-slate-300 tracking-wider">Ventas (Central)</span>
-            <span class="block text-sm font-bold tracking-tight">+56 32 353 6728</span>
+            <span class="block text-sm font-bold tracking-tight">+56 2 2206 0170</span>
           </div>
         </a>
         <a
@@ -229,7 +229,7 @@ function handleSubmit() {
             id="formAsunto"
             v-model="formService"
             required
-            class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-600 bg-white outline-none transition duration-200 focus:border-cyan focus:ring-4 focus:ring-cyan/10"
+            class="mt-2 w-full max-w-full rounded-xl border border-slate-200 pl-4 pr-10 py-3 text-sm text-slate-600 bg-white outline-none transition duration-200 focus:border-cyan focus:ring-4 focus:ring-cyan/10"
           >
             <option
               v-for="opt in serviceOptions"

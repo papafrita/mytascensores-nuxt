@@ -1,8 +1,10 @@
 <template>
-  <div class="min-h-screen bg-surface text-ink font-sans antialiased overflow-x-hidden">
-    <TopInfoBar />
+  <div class="min-h-screen bg-surface text-ink font-sans antialiased overflow-x-clip">
+    <div class="sticky top-0 z-40">
+      <TopInfoBar />
+      <TheHeader />
+    </div>
     <SchemaOrg />
-    <TheHeader />
     <main>
       <slot />
     </main>

@@ -16,6 +16,13 @@
         <p class="mt-4 text-base text-white/80 leading-relaxed">
           Ofrecemos cobertura técnica experta en todas las áreas de transporte vertical con procesos modernos y trazabilidad absoluta.
         </p>
+        <div class="mt-6 inline-flex items-center gap-3 rounded-2xl border border-secondary/30 bg-white/5 px-5 py-3 text-left">
+          <img src="/images/iso-logo.svg" alt="Logo ISO" width="44" height="40" loading="lazy" decoding="async" class="flex-shrink-0 h-10 w-auto rounded-md" />
+          <span class="leading-tight">
+            <span class="block font-display font-extrabold text-sm md:text-base text-white">Certificación ISO 9001</span>
+            <span class="block text-xs text-white/70">Servicios ejecutados bajo un Sistema de Gestión de la Calidad certificado</span>
+          </span>
+        </div>
       </div>
 
       <!-- Main Layout -->
@@ -151,7 +158,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { useServicesData } from '../../composables/useServicesData'
-import { 
+import {
   Wrench,
   ArrowRight,
   ArrowUpRight,

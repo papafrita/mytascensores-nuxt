@@ -1,0 +1,91 @@
+# =====================================================================
+# Makefile — Entrega del sitio MYT Ascensores
+# Dirigido a: responsable de despliegue / DNS
+# =====================================================================
+# El sitio es ESTÁTICO (carpeta .output/public). El formulario de
+# contacto funciona mediante un Cloudflare Worker externo ya desplegado.
+#
+# Uso:
+#   make              -> muestra esta ayuda
+#   make dns          -> registros DNS a agregar en Resend
+#   make preview      -> previsualiza el sitio en http://localhost:8080
+#   make test         -> prueba que el Worker del formulario responde
+#   make verificar    -> checklist final
+# =====================================================================
+
+.DEFAULT_GOAL := help
+
+WORKER_URL := https://myt-contact.mytascensores.workers.dev
+SITE_DIR   ?= .output/public
+
+.PHONY: help dns preview test verificar
+
+help: ## Muestra las instrucciones de entrega
+	@echo ""
+	@echo "================ ENTREGA SITIO MYT ASCENSORES ================"
+	@echo ""
+	@echo "1) SERVIDOR ESTATICO"
+	@echo "   Servir la carpeta $(SITE_DIR) como archivos estaticos"
+	@echo "   (reemplazar la version anterior del sitio)."
+	@echo "   NO requiere backend: el formulario usa un Worker externo."
+	@echo ""
+	@echo "2) DNS  (para que el formulario pueda enviar correos)"
+	@echo "   Ejecutar:  make dns   -> muestra los 3 registros a agregar."
+	@echo ""
+	@echo "3) VERIFICAR DOMINIO EN RESEND"
+	@echo "   Tras agregar los DNS, avisar a Tomas para hacer clic en"
+	@echo "   'Verify' en https://resend.com/domains  (mytascensores.cl)."
+	@echo ""
+	@echo "4) PROBAR"
+	@echo "   make test  -> verifica el Worker."
+	@echo "   Abrir https://mytascensores.cl/#contacto y enviar el formulario."
+	@echo "   El correo llega a contacto@mytascensores.cl"
+	@echo ""
+
+dns: ## Registros DNS para verificar mytascensores.cl en Resend
+	@echo ""
+	@echo "================ REGISTROS DNS (mytascensores.cl) ================"
+	@echo "Agregar en el panel DNS del dominio:"
+	@echo ""
+	@echo "1) DKIM  (TXT)"
+	@echo "   host  : resend._domainkey   (FQDN: resend._domainkey.mytascensores.cl)"
+	@echo "   valor : v=DKIM1; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCs8W1C1vsrQY34oUHQsZoIZ3MCDM7NV9YBlriwRIwdGDQrREZ2U77cAZo6eHGoRDUpOSCh5EP1sZL8AYPsZPhtoQBpRdWT4YoNoOluJidkMhVrU6md6Sc5GHXSSudHQ8SQtDM/h4xjoDlyqo4a/ymIBaY7MwuQhU51lDaK+6dz/wIDAQAB"
+	@echo ""
+	@echo "2) MX  (return-path)"
+	@echo "   host  : send   (FQDN: send.mytascensores.cl)"
+	@echo "   valor : feedback-smtp.sa-east-1.amazonses.com   (prioridad 10)"
+	@echo ""
+	@echo "3) SPF  (TXT)"
+	@echo "   host  : send   (FQDN: send.mytascensores.cl)"
+	@echo "   valor : v=spf1 include:amazonses.com ~all"
+	@echo ""
+	@echo "Notas:"
+	@echo "  - Si el proveedor agrega el dominio automaticamente (Cloudflare lo hace),"
+	@echo "    ingresar solo el host relativo: resend._domainkey  /  send"
+	@echo "  - Los registros TXT y MX van en modo 'DNS only' (nube gris), NUNCA proxied."
+	@echo "  - Copiar los valores exactos del dashboard de Resend por seguridad."
+	@echo "  - TTL: Auto."
+	@echo ""
+
+preview: ## Previsualiza el sitio estatico en http://localhost:8080
+	@echo "Sirviendo $(SITE_DIR) en http://localhost:8080  (Ctrl+C para detener)"
+	@echo "Sugerencia: make preview SITE_DIR=/ruta/a/los/archivos"
+	@cd $(SITE_DIR) && python3 -m http.server 8080
+
+test: ## Prueba el Worker del formulario (preflight CORS)
+	@echo "Probando Worker: $(WORKER_URL)"
+	@curl -s -o /dev/null -w "  preflight OPTIONS: HTTP %{http_code}  (204 = OK)\n" \
+	  -X OPTIONS $(WORKER_URL) \
+	  -H 'Origin: https://mytascensores.cl' \
+	  -H 'Access-Control-Request-Method: POST' \
+	  -H 'Access-Control-Request-Headers: Content-Type'
+
+verificar: ## Checklist final
+	@echo ""
+	@echo "================ CHECKLIST FINAL ================"
+	@echo " [ ] 1. DNS agregados  (make dns)"
+	@echo " [ ] 2. Dominino verificado en Resend  (estado 'verified')"
+	@echo " [ ] 3. Carpeta $(SITE_DIR) servida en produccion"
+	@echo " [ ] 4. Formulario probado en https://mytascensores.cl/#contacto"
+	@echo " [ ] 5. Correo recibido en contacto@mytascensores.cl"
+	@echo ""

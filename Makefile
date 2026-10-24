@@ -19,4 +19,4 @@ deploy:
 		echo "Usage: CF_PAGES_PROJECT_NAME=<cloudflare-pages-project> make deploy"; \
 		exit 1; \
 	fi
-	npx wrangler pages deploy .output/public --project-name "$(CF_PAGES_PROJECT_NAME)"
+	npx wrangler pages deploy dist --project-name "$(CF_PAGES_PROJECT_NAME)"

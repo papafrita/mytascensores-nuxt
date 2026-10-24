@@ -5,7 +5,12 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY || '',
-    contactReceiver: process.env.CONTACT_RECEIVER || 'contacto@mytascensores.cl'
+    contactFromName: process.env.CONTACT_FROM_NAME || 'MYT Ascensores',
+    contactFromEmail: process.env.CONTACT_FROM_EMAIL || 'contacto@mytascensores.cl',
+    contactToEmail: process.env.CONTACT_TO_EMAIL || 'contacto@mytascensores.cl',
+    public: {
+      contactEndpoint: process.env.NUXT_PUBLIC_CONTACT_ENDPOINT || ''
+    }
   },
 
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
@@ -25,7 +30,10 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
+      crawlLinks: true,
       routes: [
+        '/',
+        '/nosotros',
         '/servicios/correctivo',
         '/servicios/reparacion',
         '/servicios/importacion'
@@ -44,9 +52,15 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap',
+          media: 'print',
+          onload: 'this.media=\'all\''
         },
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' }
       ],
       meta: [
         {

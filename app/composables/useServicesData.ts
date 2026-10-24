@@ -36,11 +36,11 @@ export const useServicesData = () => {
   const servicesData: Record<ServiceId, ServiceData> = {
     correctivo: {
       category: 'Servicio Correctivo 24/7',
-      title: 'Mantenimiento Correctivo',
-      seoTitle: 'Servicio de Emergencias 24/7 | MYT Ascensores',
+      title: 'Mantenimiento Preventivo y Correctivo de Ascensores',
+      seoTitle: 'Mantención y Emergencias de Ascensores 24/7 | MYT',
       meta: 'Asistencia inmediata 24/7 para el rescate rápido de pasajeros, bloqueos y fallas operacionales críticas con técnicos de turno.',
       icon: 'clipboard-list',
-      image: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (3).jpeg',
+      image: '/images/gallery/servicio-tecnico-multimarca.jpeg',
       description: 'Atendemos requerimientos puntuales y llamadas de emergencias técnicas las 24 horas del día para resolver interrupciones, ajustar componentes y mantener los equipos disponibles.',
       overview: 'Las interrupciones en el servicio de transporte vertical causan graves inconvenientes en comunidades residenciales, oficinas y recintos de salud. Nuestro Mantenimiento Correctivo y Servicio de Emergencias 24/7 está diseñado para devolver sus ascensores a la operación segura en tiempo récord.<br><br>Contamos con un centro de despacho telefónico permanente y cuadrillas de técnicos de turno equipados con vehículos de respuesta rápida y stock crítico de repuestos multimarca. Priorizamos de forma absoluta los rescates de pasajeros atrapados y los bloqueos totales del equipo, aplicando protocolos de seguridad estandarizados para mitigar cualquier riesgo físico.',
       features: [
@@ -69,11 +69,11 @@ export const useServicesData = () => {
     },
     reparacion: {
       category: 'Servicio Correctivo',
-      title: 'Reparación y Normalización',
+      title: 'Reparación y Normalización de Ascensores',
       seoTitle: 'Reparación y Normalización de Ascensores | MYT',
       meta: 'Adecuación a la normativa vigente del MINVU, diagnóstico avanzado y subsanación de observaciones técnicas para obtener tu certificación legal.',
       icon: 'cog',
-      image: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (2).jpeg',
+      image: '/images/gallery/modernizacion-tableros-control.jpeg',
       description: 'Diagnosticamos fallas, corregimos desviaciones técnicas y normalizamos equipos para recuperar seguridad, continuidad operacional y cumplimiento normativo exigido por el MINVU.',
       overview: 'La Ley de Ascensores en Chile exige que todos los equipos de transporte vertical cumplan con rigurosos estándares de seguridad técnica para obtener su certificación legal. Nuestro servicio de Reparación y Normalización se enfoca en diagnosticar fallas estructurales, eléctricas o mecánicas y ejecutar planes de acción rápidos para corregir desviaciones técnicas.<br><br>Desde el cambio de cables de tracción y poleas desgastadas hasta la actualización de tableros de control con tecnología variadora de frecuencia (VVVF) y sistemas de rescate automático (ARD), devolvemos a sus equipos la máxima seguridad operacional y el cumplimiento legal absoluto ante el MINVU.',
       features: [
@@ -102,11 +102,11 @@ export const useServicesData = () => {
     },
     importacion: {
       category: 'Proyectos Especiales',
-      title: 'Importación e Instalación',
+      title: 'Importación e Instalación de Ascensores',
       seoTitle: 'Importación e Instalación de Ascensores | MYT',
       meta: 'Proyectos llave en mano para obras nuevas y reemplazo total. Equipos Gearless eficientes, ingeniería de montaje y aprobación municipal.',
       icon: 'download',
-      image: '/images/gallery/WhatsApp Image 2026-05-11 at 6.54.40 PM (4).jpeg',
+      image: '/images/gallery/instalacion-sistemas-seguridad.jpeg',
       description: 'Acompañamos proyectos de importación, instalación y puesta en marcha de equipos de transporte vertical, coordinando cada etapa técnica con foco en trazabilidad y excelencia operacional.',
       overview: 'Para obras nuevas, edificios residenciales, comerciales o reemplazos completos de equipos antiguos, MYT ofrece una solución integral de ingeniería en Importación e Instalación de ascensores. Colaboramos estrechamente con prestigiosas fábricas globales para importar tecnologías de punta que se adapten a las dimensiones específicas de su escotilla y a los requerimientos de tráfico de su proyecto.<br><br>Nuestros ingenieros civiles e instaladores mecánicos certificados lideran todo el proceso de montaje estructural, cableado eléctrico, calibración de seguridad y tramitación de la primera certificación ante la municipalidad, asegurando una ejecución de obra limpia, a tiempo y en presupuesto.',
       features: [

@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <HeroSection
       tag="Conoce a MYT Ascensores"
-      title="Comprometidos con la excelencia en transporte vertical"
+      title="Comprometidos con la excelencia en ascensores y transporte vertical"
       subtitle="Somos una empresa experta e inscrita en el registro del MINVU, enfocada en brindar servicios preventivos y correctivos de máxima calidad que garantizan la seguridad, durabilidad y optimización operacional de tus equipos de ascensores."
       background-image="/images/hero-bg.png"
       min-height="440px"
@@ -60,7 +60,7 @@
               
               <div class="p-4 bg-surface rounded-2xl border border-slate-50 transition-all hover:bg-white hover:shadow-md hover:border-cyan/20">
                 <span class="block text-3xl font-extrabold font-display text-primary mb-1">100%</span>
-                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Garantía MINVU</span>
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Garantía</span>
               </div>
             </div>
             
@@ -209,7 +209,7 @@
       </div>
     </section>
 
-    <!-- Certificación de Detalle Section -->
+    <!-- Certificaciones Section (MINVU + ISO 9001) -->
     <section class="bg-surface py-14 border-t border-slate-200/50 relative overflow-hidden">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="bg-white rounded-3xl border border-slate-100 p-8 md:p-12 shadow-premium max-w-4xl mx-auto flex flex-col md:flex-row gap-8 items-center">
@@ -225,6 +225,23 @@
             <h3 class="text-2xl font-extrabold font-display text-navy mb-3">Empresa Habilitada e Inscrita ante el MINVU</h3>
             <p class="text-slate-600 text-sm leading-relaxed">
               <strong>MYT Ascensores</strong> cumple con la Ley de Copropiedad y con las exigencias reguladoras del Ministerio de Vivienda y Urbanismo de Chile. Nos encontramos debidamente inscritos bajo el <strong>Rol N°256, Resolución N°1452</strong> en el Registro Nacional de Proveedores Técnicos de Ascensores y Montacargas. Esto certifica legalmente que todas nuestras mantenciones periódicas y firmas de normalización tienen total validez administrativa y legal ante los entes fiscalizadores municipales.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-white rounded-3xl border border-slate-100 p-8 md:p-12 shadow-premium max-w-4xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+          <div class="flex-shrink-0 bg-primary text-white p-6 rounded-2xl shadow-lg border border-primary/20 flex flex-col items-center justify-center text-center w-40 h-40">
+            <img src="/images/iso-logo.svg" alt="Logo ISO" width="48" height="44" loading="lazy" decoding="async" class="h-11 w-auto rounded mb-3" />
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-300">ISO 9001</span>
+            <span class="font-display font-extrabold text-lg mt-1">CERTIFICADO</span>
+          </div>
+          <div>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-secondary/15 text-secondary-dark mb-4">
+              <ShieldCheck class="h-3.5 w-3.5" /> Gestión de la Calidad
+            </span>
+            <h3 class="text-2xl font-extrabold font-display text-navy mb-3">Certificación ISO 9001</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              <strong>MYT Ascensores</strong> cuenta con la certificación <strong>ISO 9001</strong>, la norma internacional para Sistemas de Gestión de la Calidad. Nuestros procesos de mantención, reparación e instalación se rigen por procedimientos documentados, controles de calidad en cada etapa y un compromiso de mejora continua, asegurando un servicio consistente y confiable para cada cliente.
             </p>
           </div>
         </div>
@@ -251,7 +268,7 @@
             <NuxtLink to="/#contacto" class="inline-flex items-center gap-2 rounded-xl bg-tertiary hover:bg-tertiary-dark text-white font-bold px-7 py-4 transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-tertiary/15 text-sm md:text-base">
               Solicitar cotización técnica <ArrowUpRight class="h-5 w-5" />
             </NuxtLink>
-            <a href="tel:+56323536728" class="inline-flex items-center justify-center rounded-xl border border-white/60 hover:bg-white hover:text-navy px-7 py-4 font-semibold text-white transition-all transform hover:-translate-y-0.5 text-sm md:text-base">
+            <a href="tel:+56222060170" class="inline-flex items-center justify-center rounded-xl border border-white/60 hover:bg-white hover:text-navy px-7 py-4 font-semibold text-white transition-all transform hover:-translate-y-0.5 text-sm md:text-base">
               Llamar a Ventas
             </a>
           </div>
@@ -283,7 +300,7 @@ import { Heart } from 'lucide-vue-next'
 // Enhanced SEO meta for About page
 useSeoMeta({
   title: 'Nosotros | MYT Ascensores — Empresa Certificada MINVU de Transporte Vertical',
-  description: 'Conoce a MYT Ascensores: empresa inscrita en el registro MINVU (Rol N°256) especializada en mantención de ascensores en Chile. Misión, visión, valores y certificaciones.',
+  description: 'Conoce a MYT Ascensores: empresa inscrita en el registro MINVU (Rol N°256) y certificada ISO 9001, especializada en mantención de ascensores en Chile. Misión, visión, valores y certificaciones.',
   ogTitle: 'Sobre MYT Ascensores | Empresa Certificada MINVU',
   ogDescription: 'Conoce nuestra misión, visión y valores. Empresa chilena inscrita en el MINVU con +450 equipos activos y +600 servicios exitosos.',
   ogUrl: 'https://mytascensores.cl/nosotros',
