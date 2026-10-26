@@ -21,10 +21,10 @@ const props = defineProps<{
 }>()
 
 // Icon mapping for sidebar navigation
-const serviceIcons: Record<string, ReturnType<typeof ClipboardCheck>> = {
-  correctivo: ClipboardList,
-  reparacion: Cog,
-  importacion: Download
+const serviceIcons: Record<ServiceId, ReturnType<typeof ClipboardCheck>> = {
+  'mantencion-correctiva-de-ascensores': ClipboardList,
+  'reparacion-y-normalizacion-de-ascensores': Cog,
+  'instalacion-de-ascensores': Download
 }
 
 // Service navigation items
@@ -32,14 +32,9 @@ const serviceNavItems = computed(() =>
   Object.entries(props.services).map(([key, svc]) => ({
     key,
     title: svc.title,
-    icon: serviceIcons[key]
+    icon: serviceIcons[key as ServiceId]
   }))
 )
-
-// Navigate to service page
-function goToService(key: string) {
-  navigateTo(`/servicios/${key}`)
-}
 
 // Form state
 const formName = ref('')
@@ -55,17 +50,17 @@ const serviceOptions = [
   { value: 'Importación e Instalación', label: 'Importación e Instalación' }
 ]
 
-const serviceValueMap: Record<string, string> = {
-  correctivo: 'Mantenimiento Correctivo',
-  reparacion: 'Reparación y Normalización',
-  importacion: 'Importación e Instalación'
+const serviceValueMap: Record<ServiceId, string> = {
+  'mantencion-correctiva-de-ascensores': 'Mantenimiento Correctivo',
+  'reparacion-y-normalizacion-de-ascensores': 'Reparación y Normalización',
+  'instalacion-de-ascensores': 'Importación e Instalación'
 }
 
 // Set form service when current service changes
 watch(
   () => props.currentServiceId,
   (newId) => {
-    formService.value = serviceValueMap[newId] || serviceOptions[0].value
+    formService.value = serviceValueMap[newId as ServiceId] || serviceOptions[0].value
   },
   { immediate: true }
 )
@@ -77,7 +72,7 @@ function handleSubmit() {
   // Reset form
   formName.value = ''
   formEmail.value = ''
-  formService.value = serviceValueMap[props.currentServiceId] || serviceOptions[0].value
+  formService.value = serviceValueMap[props.currentServiceId as ServiceId] || serviceOptions[0].value
   formMessage.value = ''
 
   // Auto-hide success message
@@ -96,16 +91,17 @@ function handleSubmit() {
         Nuestros Servicios
       </h3>
       <div class="mt-4 space-y-2">
-        <button
+        <NuxtLink
           v-for="item in serviceNavItems"
           :key="item.key"
+          :to="`/servicios/${item.key}`"
+          :aria-current="item.key === currentServiceId ? 'page' : undefined"
           :class="[
             'w-full text-left p-3.5 rounded-xl border transition-all duration-300 group flex items-center justify-between min-h-[64px]',
             item.key === currentServiceId
               ? 'border-cyan/30 bg-cyan/5 shadow-premiumGlow'
               : 'border-slate-100 bg-white hover:border-slate-200'
           ]"
-          @click="goToService(item.key)"
         >
           <div class="flex items-center gap-3">
             <span
@@ -135,7 +131,7 @@ function handleSubmit() {
               item.key === currentServiceId ? 'text-cyan' : 'text-slate-300 group-hover:text-cyan'
             ]"
           />
-        </button>
+        </NuxtLink>
       </div>
     </div>
 

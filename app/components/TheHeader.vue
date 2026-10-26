@@ -75,12 +75,13 @@ const toggleMenu = () => {
 }
 
 const isLinkActive = (to: string) => {
+  const path = route.path.length > 1 ? route.path.replace(/\/$/, '') : route.path
   if (to === '/') {
-    return route.path === '/' && !route.hash
+    return path === '/' && !route.hash
   }
   if (to.startsWith('/#')) {
-    return route.path === '/' && route.hash === to.substring(1)
+    return path === '/' && route.hash === to.substring(1)
   }
-  return route.path === to
+  return path === to
 }
 </script>

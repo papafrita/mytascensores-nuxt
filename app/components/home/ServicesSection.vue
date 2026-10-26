@@ -157,7 +157,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useServicesData } from '../../composables/useServicesData'
+import { SERVICE_IDS, useServicesData, type ServiceId } from '../../composables/useServicesData'
 import {
   Wrench,
   ArrowRight,
@@ -170,7 +170,7 @@ import {
 } from 'lucide-vue-next'
 
 const { servicesData } = useServicesData()
-const activeServiceKey = ref<keyof typeof servicesData>('correctivo')
+const activeServiceKey = ref<ServiceId>(SERVICE_IDS[0])
 
 const activeService = computed(() => servicesData[activeServiceKey.value])
 

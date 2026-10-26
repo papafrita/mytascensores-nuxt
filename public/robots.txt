@@ -1,13 +1,12 @@
 # robots.txt - MYT Ascensores
 # https://mytascensores.cl
 
-# Permitir todos los rastreadores
+# Allow all crawlers
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_nuxt/
 
-# Permitir bots de IA explícitamente
+# Explicitly allow AI crawlers
 User-agent: GPTBot
 Allow: /
 

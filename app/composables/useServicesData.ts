@@ -30,15 +30,27 @@ export interface ServiceData {
   metric: ServiceMetric
 }
 
-export type ServiceId = 'correctivo' | 'reparacion' | 'importacion'
+export const SERVICE_IDS = [
+  'mantencion-correctiva-de-ascensores',
+  'reparacion-y-normalizacion-de-ascensores',
+  'instalacion-de-ascensores'
+] as const
+
+export type ServiceId = typeof SERVICE_IDS[number]
+
+export const LEGACY_SERVICE_PATHS: Record<string, ServiceId> = {
+  '/servicios/correctivo': 'mantencion-correctiva-de-ascensores',
+  '/servicios/reparacion': 'reparacion-y-normalizacion-de-ascensores',
+  '/servicios/importacion': 'instalacion-de-ascensores'
+}
 
 export const useServicesData = () => {
   const servicesData: Record<ServiceId, ServiceData> = {
-    correctivo: {
+    'mantencion-correctiva-de-ascensores': {
       category: 'Servicio Correctivo 24/7',
-      title: 'Mantenimiento Preventivo y Correctivo de Ascensores',
-      seoTitle: 'Mantención y Emergencias de Ascensores 24/7 | MYT',
-      meta: 'Asistencia inmediata 24/7 para el rescate rápido de pasajeros, bloqueos y fallas operacionales críticas con técnicos de turno.',
+      title: 'Mantención Correctiva y Emergencias de Ascensores',
+      seoTitle: 'Mantención Correctiva y Emergencias de Ascensores 24/7 | MYT',
+      meta: 'Emergencias de ascensores 24/7: rescate rápido de pasajeros, bloqueos y fallas operacionales críticas atendidas por técnicos de turno.',
       icon: 'clipboard-list',
       image: '/images/gallery/servicio-tecnico-multimarca.jpeg',
       description: 'Atendemos requerimientos puntuales y llamadas de emergencias técnicas las 24 horas del día para resolver interrupciones, ajustar componentes y mantener los equipos disponibles.',
@@ -67,7 +79,7 @@ export const useServicesData = () => {
       ],
       metric: { num: '24 / 7', lbl: 'Disponibilidad de Respuesta' }
     },
-    reparacion: {
+    'reparacion-y-normalizacion-de-ascensores': {
       category: 'Servicio Correctivo',
       title: 'Reparación y Normalización de Ascensores',
       seoTitle: 'Reparación y Normalización de Ascensores | MYT',
@@ -100,7 +112,7 @@ export const useServicesData = () => {
       ],
       metric: { num: '100%', lbl: 'Aprobación de Certificaciones' }
     },
-    importacion: {
+    'instalacion-de-ascensores': {
       category: 'Proyectos Especiales',
       title: 'Importación e Instalación de Ascensores',
       seoTitle: 'Importación e Instalación de Ascensores | MYT',

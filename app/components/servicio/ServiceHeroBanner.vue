@@ -26,7 +26,7 @@ defineProps<{
       >
         <NuxtLink to="/" class="hover:text-cyan transition-colors">Inicio</NuxtLink>
         <ChevronRight class="h-3.5 w-3.5 text-white/40" />
-        <NuxtLink to="/#servicios" class="hover:text-cyan transition-colors">Servicios</NuxtLink>
+        <NuxtLink to="/servicios" class="hover:text-cyan transition-colors">Servicios</NuxtLink>
         <ChevronRight class="h-3.5 w-3.5 text-white/40" />
         <span class="text-cyan font-semibold">{{ category }}</span>
       </nav>

@@ -6,9 +6,9 @@ MYT Ascensores es una empresa chilena especializada en el mantenimiento correcti
 
 ## Servicios
 
-- [Mantenimiento Correctivo](https://mytascensores.cl/servicios/correctivo): Atención de emergencias las 24 horas, los 7 días de la semana, todo el año.
-- [Reparación y Normalización](https://mytascensores.cl/servicios/reparacion): Diagnóstico de fallas, reparación y adecuación a normativa vigente del MINVU.
-- [Importación e Instalación](https://mytascensores.cl/servicios/importacion): Importación directa e instalación de ascensores nuevos, proyectos llave en mano.
+- [Mantención Correctiva y Emergencias](https://mytascensores.cl/servicios/mantencion-correctiva-de-ascensores/): Atención de emergencias las 24 horas, los 7 días de la semana, todo el año.
+- [Reparación y Normalización](https://mytascensores.cl/servicios/reparacion-y-normalizacion-de-ascensores/): Diagnóstico de fallas, reparación y adecuación a normativa vigente del MINVU.
+- [Importación e Instalación](https://mytascensores.cl/servicios/instalacion-de-ascensores/): Importación directa e instalación de ascensores nuevos, proyectos llave en mano.
 
 ## Certificaciones
 
@@ -27,6 +27,6 @@ MYT Ascensores es una empresa chilena especializada en el mantenimiento correcti
 ## Páginas Principales
 
 - [Inicio](https://mytascensores.cl/)
-- [Nosotros](https://mytascensores.cl/nosotros)
-- [Servicios](https://mytascensores.cl/#servicios)
+- [Nosotros](https://mytascensores.cl/nosotros/)
+- [Servicios](https://mytascensores.cl/servicios/)
 - [Contacto](https://mytascensores.cl/#contacto)

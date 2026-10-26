@@ -8,12 +8,12 @@ import { useHead } from '#app'
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://mytascensores.cl/#business',
+  '@id': `${SITE_URL}/#business`,
   'name': 'MYT Ascensores',
   'legalName': 'MYT Ascensores',
-  'url': 'https://mytascensores.cl',
-  'logo': 'https://mytascensores.cl/images/logo-myt.png',
-  'image': 'https://mytascensores.cl/images/og-image.png',
+  'url': absoluteUrl('/'),
+  'logo': `${SITE_URL}/images/logo-myt.png`,
+  'image': `${SITE_URL}/images/og-image.png`,
   'description': 'Empresa chilena especializada en mantención, reparación e instalación de ascensores. Servicio multimarca certificado MINVU e ISO 9001.',
   'telephone': '+56222060170',
   'contactPoint': [
@@ -30,6 +30,7 @@ const organizationSchema = {
     'postalCode': '7750000',
     'addressCountry': 'CL',
   },
+  'hasMap': 'https://www.google.com/maps/search/?api=1&query=Carmen+Covarrubias+285,+%C3%91u%C3%B1oa,+Chile',
   'openingHoursSpecification': [
     {
       '@type': 'OpeningHoursSpecification',
@@ -81,9 +82,11 @@ const organizationSchema = {
 const webSiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
   'name': 'MYT Ascensores',
-  'url': 'https://mytascensores.cl',
-  'inLanguage': 'es',
+  'url': absoluteUrl('/'),
+  'inLanguage': 'es-CL',
+  'publisher': { '@id': `${SITE_URL}/#business` },
 }
 
 useHead({

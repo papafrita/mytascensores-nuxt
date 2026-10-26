@@ -1,4 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { SITE_URL } from './app/utils/site'
+import { LEGACY_SERVICE_PATHS, SERVICE_IDS } from './app/composables/useServicesData'
+
+const servicePaths = SERVICE_IDS.map(id => `/servicios/${id}/`)
+const legacyServicePaths = Object.keys(LEGACY_SERVICE_PATHS)
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -16,16 +22,29 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/sitemap'],
 
   site: {
-    url: 'https://mytascensores.cl',
-    name: 'MYT Ascensores'
+    url: SITE_URL,
+    name: 'MYT Ascensores',
+    trailingSlash: true
   },
 
   sitemap: {
-    urls: [
-      { loc: '/servicios/correctivo', changefreq: 'monthly', priority: 0.8 },
-      { loc: '/servicios/reparacion', changefreq: 'monthly', priority: 0.8 },
-      { loc: '/servicios/importacion', changefreq: 'monthly', priority: 0.8 }
-    ]
+    urls: servicePaths,
+    exclude: legacyServicePaths.flatMap(path => [path, `${path}/`])
+  },
+
+  routeRules: Object.fromEntries(
+    Object.entries(LEGACY_SERVICE_PATHS).map(([from, id]) => [
+      from,
+      { redirect: { to: `/servicios/${id}/`, statusCode: 301 } }
+    ])
+  ),
+
+  experimental: {
+    defaults: {
+      nuxtLink: {
+        trailingSlash: 'append'
+      }
+    }
   },
 
   nitro: {
@@ -33,18 +52,18 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: [
         '/',
-        '/nosotros',
-        '/servicios/correctivo',
-        '/servicios/reparacion',
-        '/servicios/importacion'
-      ],
-      autoSubfolderIndex: false
+        '/nosotros/',
+        '/servicios/',
+        ...servicePaths,
+        ...legacyServicePaths,
+        '/sitemap.xml'
+      ]
     }
   },
 
   app: {
     head: {
-      htmlAttrs: { lang: 'es', class: 'scroll-smooth' },
+      htmlAttrs: { lang: 'es-CL', class: 'scroll-smooth' },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       link: [
@@ -72,13 +91,13 @@ export default defineNuxtConfig({
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'MYT Ascensores' },
         { property: 'og:locale', content: 'es_CL' },
-        { property: 'og:image', content: 'https://mytascensores.cl/images/og-image.png' },
+        { property: 'og:image', content: `${SITE_URL}/images/og-image.png` },
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
         { property: 'og:image:alt', content: 'MYT Ascensores — Soluciones de Transporte Vertical en Chile' },
         // Twitter Card defaults
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:image', content: 'https://mytascensores.cl/images/og-image.png' },
+        { name: 'twitter:image', content: `${SITE_URL}/images/og-image.png` },
         // Additional SEO meta
         { name: 'robots', content: 'index, follow' },
         { name: 'author', content: 'MYT Ascensores' },

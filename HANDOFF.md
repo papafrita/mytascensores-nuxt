@@ -17,6 +17,14 @@ El formulario (`/#contacto`) necesita ejecutar código en el servidor (validar, 
 2. **Agregar 3 registros DNS** para verificar el dominio en Resend (ver sección DNS).
 3. No necesita configurar nada del backend del formulario: el Worker ya está desplegado por Tomás y es externo.
 
+### Configuración del servidor (SEO)
+Cada página se genera como carpeta con `index.html` (`/nosotros/index.html`, `/servicios/.../index.html`) y las URLs canónicas terminan en `/`. El servidor debe:
+1. Servir `index.html` al pedir una carpeta (`/nosotros/`) y redirigir con **301** `/nosotros` → `/nosotros/` (nginx y Apache lo hacen por defecto con directorios).
+2. Redirigir con **301** `http://` → `https://` y `www.mytascensores.cl` → `mytascensores.cl`.
+3. Usar `404.html` como página de error y responder con código **404** real (no 200 ni 500).
+4. Servir `sitemap.xml` como `application/xml` y `robots.txt` / `llms*.txt` como `text/plain; charset=utf-8`.
+5. Las URLs antiguas `/servicios/correctivo`, `/servicios/reparacion` y `/servicios/importacion` ya incluyen una redirección HTML; si el servidor lo permite, conviene reemplazarlas por redirecciones **301** reales hacia `/servicios/mantencion-correctiva-de-ascensores/`, `/servicios/reparacion-y-normalizacion-de-ascensores/` y `/servicios/instalacion-de-ascensores/`.
+
 ### B) Para Tomás (desplegar el Worker)
 Desde la raíz del proyecto:
 ```bash

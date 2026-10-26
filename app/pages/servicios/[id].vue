@@ -47,43 +47,43 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useRoute, useRouter } from '#app'
-import { useServicesData } from '../../composables/useServicesData'
+import { useRoute } from '#app'
+import { useServicesData, type ServiceId } from '../../composables/useServicesData'
 import ServiceHeroBanner from '../../components/servicio/ServiceHeroBanner.vue'
 import ServiceContent from '../../components/servicio/ServiceContent.vue'
 import ServiceSidebar from '../../components/servicio/ServiceSidebar.vue'
 
 const route = useRoute()
-const router = useRouter()
 const { servicesData } = useServicesData()
 
-const serviceId = computed(() => {
-  const id = route.params.id as string
-  return id in servicesData ? id : 'correctivo'
-})
+const serviceId = computed(() => route.params.id as ServiceId)
 
-const service = computed(() => {
-  return servicesData[serviceId.value as keyof typeof servicesData]
-})
+const service = computed(() => servicesData[serviceId.value])
 
-// Enhanced dynamic SEO meta
+if (!service.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Servicio no encontrado', fatal: true })
+}
+
+const pageUrl = computed(() => absoluteUrl(`/servicios/${serviceId.value}`))
+const pageImage = computed(() => `${SITE_URL}${service.value?.image || '/images/og-image.png'}`)
+
 useSeoMeta({
-  title: () => service.value?.seoTitle || 'Servicios Especializados | MYT Ascensores',
-  description: () => service.value?.meta || 'Detalle del servicio de transporte vertical en MYT Ascensores. Asistencia técnica certificada por el MINVU.',
-  ogTitle: () => service.value?.seoTitle || 'Servicios | MYT Ascensores',
-  ogDescription: () => service.value?.meta || 'Servicio técnico certificado MINVU para transporte vertical.',
-  ogUrl: () => `https://mytascensores.cl/servicios/${serviceId.value}`,
-  ogImage: () => service.value?.image ? `https://mytascensores.cl${service.value.image}` : 'https://mytascensores.cl/images/og-image.png',
+  title: () => service.value?.seoTitle,
+  description: () => service.value?.meta,
+  ogTitle: () => service.value?.seoTitle,
+  ogDescription: () => service.value?.meta,
+  ogUrl: pageUrl,
+  ogImage: pageImage,
   twitterCard: 'summary_large_image',
-  twitterTitle: () => service.value?.seoTitle || 'Servicios | MYT Ascensores',
-  twitterDescription: () => service.value?.meta || 'Servicio técnico certificado MINVU.',
-  twitterImage: () => service.value?.image ? `https://mytascensores.cl${service.value.image}` : 'https://mytascensores.cl/images/og-image.png'
+  twitterTitle: () => service.value?.seoTitle,
+  twitterDescription: () => service.value?.meta,
+  twitterImage: pageImage
 })
 
 // Canonical URL + Service & BreadcrumbList structured data
 useHead({
   link: [
-    { rel: 'canonical', href: computed(() => `https://mytascensores.cl/servicios/${serviceId.value}`) }
+    { rel: 'canonical', href: pageUrl }
   ],
   script: [
     {
@@ -93,17 +93,14 @@ useHead({
         '@type': 'Service',
         name: service.value?.title,
         description: service.value?.meta,
-        provider: {
-          '@type': 'Organization',
-          name: 'MYT Ascensores',
-          url: 'https://mytascensores.cl'
-        },
+        image: pageImage.value,
+        provider: { '@id': `${SITE_URL}/#business` },
         areaServed: {
           '@type': 'Country',
           name: 'Chile'
         },
-        serviceType: service.value?.category,
-        url: `https://mytascensores.cl/servicios/${serviceId.value}`
+        serviceType: service.value?.title,
+        url: pageUrl.value
       }))
     },
     {
@@ -116,13 +113,13 @@ useHead({
             '@type': 'ListItem',
             position: 1,
             name: 'Inicio',
-            item: 'https://mytascensores.cl'
+            item: absoluteUrl('/')
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Servicios',
-            item: 'https://mytascensores.cl/#servicios'
+            item: absoluteUrl('/servicios')
           },
           {
             '@type': 'ListItem',

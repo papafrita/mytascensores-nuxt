@@ -13,6 +13,13 @@
             <p class="text-slate-400 leading-relaxed font-light text-xs md:text-sm">
               Empresa especializada en mantención, reparación e instalación de ascensores en Chile. Servicio técnico certificado MINVU e ISO 9001.
             </p>
+            <address class="mt-3 not-italic text-slate-400 font-light text-xs md:text-sm leading-relaxed">
+              <span class="inline-flex items-center gap-1.5">
+                <MapPin class="h-4 w-4 text-secondary flex-shrink-0" />
+                Carmen Covarrubias 285, Ñuñoa, Región Metropolitana
+              </span>
+              <span class="block">Lunes a viernes 09:00–18:00 · Sábado 09:00–13:00</span>
+            </address>
             <div class="mt-3 flex items-center gap-2 text-xs md:text-sm">
               <AlertTriangle class="h-4 w-4 text-red-400 animate-pulse" />
               <span class="text-slate-400 font-semibold">Emergencias:</span>
@@ -32,6 +39,18 @@
           <NuxtLink class="hover:text-secondary transition-colors" to="/#contacto">Contacto</NuxtLink>
         </nav>
       </div>
+
+      <nav aria-label="Servicios" class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 border-b border-white/10 pb-6 text-xs md:text-sm">
+        <NuxtLink class="font-bold text-slate-300 hover:text-secondary transition-colors" to="/servicios">Servicios:</NuxtLink>
+        <NuxtLink
+          v-for="(service, id) in servicesData"
+          :key="id"
+          class="text-slate-400 hover:text-secondary transition-colors"
+          :to="`/servicios/${id}`"
+        >
+          {{ service.title }}
+        </NuxtLink>
+      </nav>
       
       <div class="mt-6 flex flex-col gap-4 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
         <p>© 2026 MYT Ascensores. Todos los derechos reservados.</p>
@@ -52,6 +71,8 @@
 </template>
 
 <script setup lang="ts">
-import { Phone, AlertTriangle } from 'lucide-vue-next'
-// Main website footer component
+import { Phone, AlertTriangle, MapPin } from 'lucide-vue-next'
+import { useServicesData } from '~/composables/useServicesData'
+
+const { servicesData } = useServicesData()
 </script>

@@ -89,9 +89,9 @@ MYT Ascensores utiliza el software **AUVO** para la gestión y trazabilidad digi
 ## Páginas Principales
 
 - [Inicio](https://mytascensores.cl/)
-- [Nosotros](https://mytascensores.cl/nosotros)
-- [Servicios](https://mytascensores.cl/#servicios)
-- [Mantenimiento Correctivo](https://mytascensores.cl/servicios/correctivo)
-- [Reparación y Normalización](https://mytascensores.cl/servicios/reparacion)
-- [Importación e Instalación](https://mytascensores.cl/servicios/importacion)
+- [Nosotros](https://mytascensores.cl/nosotros/)
+- [Servicios](https://mytascensores.cl/servicios/)
+- [Mantención Correctiva y Emergencias](https://mytascensores.cl/servicios/mantencion-correctiva-de-ascensores/)
+- [Reparación y Normalización](https://mytascensores.cl/servicios/reparacion-y-normalizacion-de-ascensores/)
+- [Importación e Instalación](https://mytascensores.cl/servicios/instalacion-de-ascensores/)
 - [Contacto](https://mytascensores.cl/#contacto)

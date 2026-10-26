@@ -77,7 +77,7 @@ import LightboxModal from '../components/home/LightboxModal.vue'
 const heroSlides = [
   {
     tag: 'Transporte Vertical Certificado',
-    title: 'Ascensores Modernos y Seguros',
+    title: 'Mantención de Ascensores en Chile',
     subtitle: 'Mantenimiento preventivo multimarca mensual, reparaciones y modernizaciones integrales bajo la normativa MINVU chilena.',
     backgroundImage: '/images/hero-ascensores.webp',
     badges: [
@@ -138,29 +138,25 @@ const heroSlides = [
   }
 ]
 
-// Enhanced SEO meta for homepage
 useSeoMeta({
-  title: 'MYT Ascensores | Mantención, Reparación e Instalación de Ascensores en Chile',
-  description: 'MYT Ascensores: empresa certificada MINVU especializada en mantención preventiva multimarca, reparación, normalización e instalación de ascensores en Chile. Trazabilidad digital vía AUVO. Soporte 24/7.',
+  title: 'Mantención de Ascensores en Chile | MYT Ascensores',
+  description: 'Mantención preventiva y correctiva, reparación e instalación de ascensores multimarca. Empresa inscrita en el MINVU (Rol N°256) e ISO 9001. Emergencias 24/7.',
   ogTitle: 'MYT Ascensores | Soluciones de Transporte Vertical en Chile',
   ogDescription: 'Servicio técnico certificado MINVU para ascensores, escaleras mecánicas y montacargas. Mantención preventiva multimarca, reparación y normalización. +450 equipos activos.',
-  ogUrl: 'https://mytascensores.cl',
-  ogImage: 'https://mytascensores.cl/images/og-image.png',
+  ogUrl: absoluteUrl('/'),
+  ogImage: `${SITE_URL}/images/og-image.png`,
   ogType: 'website',
   twitterCard: 'summary_large_image',
   twitterTitle: 'MYT Ascensores | Transporte Vertical Certificado en Chile',
   twitterDescription: 'Mantención, reparación e instalación de ascensores certificados por el MINVU. Servicio multimarca 24/7 con trazabilidad digital.',
-  twitterImage: 'https://mytascensores.cl/images/og-image.png'
+  twitterImage: `${SITE_URL}/images/og-image.png`
 })
 
-// Canonical URL & Image preloading for instant carousel transitions
+// Only the first slide is preloaded; HeroSection warms the rest when the browser is idle.
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://mytascensores.cl/' },
-    { rel: 'preload', as: 'image', href: '/images/hero-ascensores.webp', fetchpriority: 'high' },
-    { rel: 'preload', as: 'image', href: '/images/hero-escaleras.webp' },
-    { rel: 'preload', as: 'image', href: '/images/hero-montacargas.webp' },
-    { rel: 'preload', as: 'image', href: '/images/hero-plataformas.webp' }
+    { rel: 'canonical', href: absoluteUrl('/') },
+    { rel: 'preload', as: 'image', href: '/images/hero-ascensores.webp', fetchpriority: 'high' }
   ],
   // FAQPage structured data for Google rich results
   script: [

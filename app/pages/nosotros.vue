@@ -297,24 +297,23 @@ import {
 import HeroSection from '../components/HeroSection.vue'
 import { Heart } from 'lucide-vue-next'
 
-// Enhanced SEO meta for About page
 useSeoMeta({
-  title: 'Nosotros | MYT Ascensores — Empresa Certificada MINVU de Transporte Vertical',
-  description: 'Conoce a MYT Ascensores: empresa inscrita en el registro MINVU (Rol N°256) y certificada ISO 9001, especializada en mantención de ascensores en Chile. Misión, visión, valores y certificaciones.',
+  title: 'Nosotros | MYT Ascensores, empresa inscrita en el MINVU',
+  description: 'Conoce a MYT Ascensores: empresa chilena inscrita en el MINVU (Rol N°256) y certificada ISO 9001, especializada en mantención de ascensores multimarca.',
   ogTitle: 'Sobre MYT Ascensores | Empresa Certificada MINVU',
   ogDescription: 'Conoce nuestra misión, visión y valores. Empresa chilena inscrita en el MINVU con +450 equipos activos y +600 servicios exitosos.',
-  ogUrl: 'https://mytascensores.cl/nosotros',
-  ogImage: 'https://mytascensores.cl/images/og-image.png',
+  ogUrl: absoluteUrl('/nosotros'),
+  ogImage: `${SITE_URL}/images/og-image.png`,
   twitterCard: 'summary_large_image',
   twitterTitle: 'MYT Ascensores | Quiénes Somos',
   twitterDescription: 'Empresa certificada MINVU dedicada a la mantención, reparación e instalación de ascensores en Chile. +450 equipos activos.',
-  twitterImage: 'https://mytascensores.cl/images/og-image.png'
+  twitterImage: `${SITE_URL}/images/og-image.png`
 })
 
 // Canonical URL + BreadcrumbList structured data
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://mytascensores.cl/nosotros' }
+    { rel: 'canonical', href: absoluteUrl('/nosotros') }
   ],
   script: [
     {
@@ -327,7 +326,7 @@ useHead({
             '@type': 'ListItem',
             position: 1,
             name: 'Inicio',
-            item: 'https://mytascensores.cl'
+            item: absoluteUrl('/')
           },
           {
             '@type': 'ListItem',
